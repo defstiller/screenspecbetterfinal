@@ -4649,7 +4649,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
 }
-
 .clinox-contact-section-2 .clinox-contact-form input, .clinox-contact-section-2 .clinox-contact-form select, .clinox-contact-section-2 .clinox-contact-form button, .clinox-contact-section-2 .clinox-contact-form textarea {
   border-radius: 30px;
   padding: 20px;
@@ -6548,6 +6547,9 @@ dl, ol, ul {
   .hero__img {
     max-width: 400px;
   }
+  .imagesAboutUs {
+    display: none;
+  }
 }
 @media (max-width: 991px) {
   .hero__img {
@@ -6824,6 +6826,11 @@ dl, ol, ul {
   .cta__wrap {
     margin-right: 0;
     padding-left: 35px;
+  }
+}
+@media only screen and (min-width: 1501px) and (max-width: 5000px) {
+  #cta__wrapId {
+    margin-right: 0;
   }
 }
 @media (max-width: 1199px) {
@@ -7794,9 +7801,9 @@ select {
 .project__info {
   position: absolute;
   bottom: -8px;
-  left: 74px;
-  right: 74px;
-  padding: 30px;
+  left: 90px;
+  right: 90px;
+  padding: 15px;
   margin: auto;
   background-color: var(--color-white);
   -webkit-box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
@@ -7807,6 +7814,8 @@ select {
   transition: 0.3s;
   -webkit-transform: translateY(20px);
   transform: translateY(20px);
+  text-align: center;
+  border-radius: 10px;
 }
 @media (max-width: 1199px) {
   .project__info {
@@ -7818,11 +7827,6 @@ select {
   .project__info {
     right: 10px;
     left: 10px;
-  }
-}
-@media (max-width: 767px) {
-  .project__info {
-    padding: 30px 20px;
   }
 }
 .project__info h3 {
