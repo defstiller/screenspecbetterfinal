@@ -5072,7 +5072,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-black);
 }
 .thm-btn__icon {
-  padding-right: 56px;
+  padding-right: 56px !important;
 }
 .thm-btn__icon i {
   position: absolute;
