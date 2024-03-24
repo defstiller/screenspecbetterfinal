@@ -3006,116 +3006,7 @@ h1, h2, h3, h4, h5, h6 {
           transition-delay: 1700ms;
 }
 
-/*---------------------------------------------------- */
-/*Feature area*/
-/*----------------------------------------------------*/
-.clinox-feature-section {
-  padding: 120px 0px 0px;
-}
 
-.clinox-feature-inner-item {
-  z-index: 1;
-  overflow: hidden;
-  border-radius: 5px;
-  background-color: #fff;
-  padding: 70px 30px 60px;
-  border-bottom: 2px solid #02aaf9;
-  -webkit-box-shadow: 0px 5px 30px 0px rgba(165, 165, 166, 0.2);
-          box-shadow: 0px 5px 30px 0px rgba(165, 165, 166, 0.2);
-}
-.clinox-feature-inner-item:before {
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  height: 0%;
-  width: 100%;
-  content: "";
-  position: absolute;
-  -webkit-transition: 500ms all ease;
-  transition: 500ms all ease;
-  background-color: #02aaf9;
-}
-.clinox-feature-inner-item .inner-icon {
-  z-index: 1;
-  width: 80px;
-  height: 70px;
-  margin: 0 auto;
-  position: relative;
-  margin-bottom: 45px;
-}
-.clinox-feature-inner-item .inner-icon .line-shape {
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: 500ms all ease;
-  transition: 500ms all ease;
-}
-.clinox-feature-inner-item .inner-icon .line-shape:before {
-  left: 0;
-  right: 0;
-  top: -10px;
-  width: 2px;
-  content: "";
-  height: 90px;
-  margin: 0 auto;
-  position: absolute;
-  -webkit-transition: 500ms all ease;
-  transition: 500ms all ease;
-  background-color: #02aaf9;
-}
-.clinox-feature-inner-item .inner-icon .line-shape:after {
-  top: 50%;
-  height: 2px;
-  left: -10px;
-  content: "";
-  width: 100px;
-  position: absolute;
-  -webkit-transition: 500ms all ease;
-  transition: 500ms all ease;
-  background-color: #02aaf9;
-}
-.clinox-feature-inner-item .inner-icon:before {
-  top: 0;
-  left: 0;
-  z-index: -1;
-  content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  position: absolute;
-  background-color: #edf8fd;
-  -webkit-transition: 500ms all ease;
-  transition: 500ms all ease;
-}
-.clinox-feature-inner-item .inner-text h3 {
-  color: #101010;
-  font-size: 22px;
-  font-weight: 700;
-  padding-bottom: 18px;
-  -webkit-transition: 500ms all ease;
-  transition: 500ms all ease;
-}
-.clinox-feature-inner-item .inner-text p {
-  line-height: 1.875;
-  -webkit-transition: 500ms all ease;
-  transition: 500ms all ease;
-}
-.clinox-feature-inner-item:hover:before {
-  height: 100%;
-}
-.clinox-feature-inner-item:hover .inner-text h3, .clinox-feature-inner-item:hover .inner-text p {
-  color: #fff;
-}
-.clinox-feature-inner-item:hover .inner-icon:before {
-  background-color: #fff;
-}
-.clinox-feature-inner-item:hover .inner-icon .line-shape {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-.clinox-feature-inner-item:hover .inner-icon .line-shape:before, .clinox-feature-inner-item:hover .inner-icon .line-shape:after {
-  background-color: #fff;
-}
 
 /*---------------------------------------------------- */
 /*About area*/
@@ -4940,29 +4831,6 @@ h1, h2, h3, h4, h5, h6 {
 /*----------------------------------------*/
 /*  18. preloder
 /*----------------------------------------*/
-.preloder_part {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 99999;
-  background-color: var(--color-white);
-}
-
-.spinner {
-  margin: 0 auto;
-  width: 40px;
-  height: 40px;
-  left: 0;
-  right: 0;
-  top: 48%;
-  position: absolute;
-  text-align: center;
-  -webkit-animation: sk-rotate 2s infinite linear;
-  animation: sk-rotate 2s infinite linear;
-  z-index: 99999;
-}
 
 .dot1, .dot2 {
   width: 60%;
@@ -5466,6 +5334,11 @@ dl, ol, ul {
 @media (max-width: 1199px) {
   .main-menu__nav ul li:not(:last-child) {
     margin-right: 33px;
+  }
+}
+@media only screen and (min-width:1200px) and (max-width:1400px ) {
+  #navbarNav {
+    display: none;
   }
 }
 .main-menu__nav ul li .submenu li {
