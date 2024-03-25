@@ -6277,6 +6277,18 @@ select {
   border-bottom-right-radius: 170px;
   background-position-x: calc(100% - 76px);
 }
+.about__bg {
+  background: none; /* No background by default */
+}
+
+@media (min-width: 1001px) {
+  .about__bg {
+      background-image: url('../img/bg/about_bg.jpg');
+      background-size: cover;
+      background-position: center;
+  }
+}
+
 @media (max-width: 1199px) {
   .about__bg {
     background-position: 100%;
