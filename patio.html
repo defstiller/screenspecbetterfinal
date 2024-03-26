@@ -224,11 +224,11 @@
 						<span>Call Us <br> Directly</span>
 						<h3><a href="tel:9047539267">(904)-753-9267</a></h3>
 					</div>
-					<form action="assets/mail/contactArt.php" class="cta__form" method="POST">
-						<input type="tel" placeholder="Your Phone Number *">
+					<form action="assets/mail/contactArt.php" class="cta__form formSubmission" method="POST">
+						<input type="tel" name="phone" placeholder="Your Phone Number *" required>
 						<div class="service-select">
-							<select name="#" required>
-								<option>Service</option>
+							<select name="service" required>
+								<option disabled selected>Service</option>
 								<option value="Small Screen Repair">Small Screen Repair</option>
 								<option value="Complete Rescreening">Complete Rescreening</option>
 								<option value="Structural Damage Repair">Structural Damage Repair</option>
@@ -238,6 +238,7 @@
 
 							</select>
 						</div>
+						<input type="hidden" name="source" value="Patio">
 						<button class="thm-btn" type="submit">
 							<span class="btn-wrap">
 								<span>Request Estimate</span>
@@ -247,6 +248,25 @@
 					</form>
 				</div>
 			</div>
+			<!-- Modal -->
+<div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="responseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="responseModalLabel">Form Submission Status</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="message">
+                <!-- Response message will be displayed here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 			<!-- cta end -->
 			<!-- about start -->
 			<div class="about about__bg pt-45 pb-45" id="about" loading="lazy">
@@ -407,7 +427,7 @@
 										</h2>
 									</div>
 									<div class="clinox-contact-form">
-										<form action="assets/mail/contactArt.php" method="POST">
+										<form action="assets/mail/contactArt.php" class="formSubmission" method="POST">
 											<div class="row">
 												<div class="col-md-6">
 													<input type="text" name="name" placeholder="Name*" required>
@@ -418,8 +438,8 @@
 												</div>
 												<div class="col-md-6">
 													<div class="service-select position-relative">
-														<select name="service">
-															<option value="Service">Service*</option>
+														<select name="service" required>
+															<option disabled selected>Service*</option>
 															<option value="Small Screen Repair">Small Screen Repair</option>
 															<option value="Complete Rescreening">Complete Rescreening</option>
 															<option value="Structural Damage Repair">Structural Damage Repair</option>
@@ -433,7 +453,9 @@
 												<div class="col-md-12">
 													<textarea name="comments" placeholder="Additional info (Optional)"></textarea>
 												</div>
+												
 											</div>
+											<input type="hidden" name="source" value="Patio">
 											<button type="submit">Submit Now</button>
 										</form>
 									</div>
@@ -594,20 +616,21 @@
 						<span>Call Us <br> Directly</span>
 						<h3><a href="tel:9047539267">(904)-753-9267</a></h3>
 					</div>
-					<form action="assets/mail/contactArt.php" class="cta__form" method="POST">
-						<input type="tel" id="phone" name="phone" placeholder="Your Phone Number *">
+					<form action="assets/mail/contactArt.php" class="cta__form formSubmission" method="POST">
+						<input type="tel" name="phone" placeholder="Your Phone Number *" required>
 						<div class="service-select">
-							<select id="service" name="service">
-								<option value="1">Service</option>
-								<option value="2">Small Screen Repair</option>
-								<option value="3">Complete Rescreening</option>
-								<option value="4">Structural Damage Repair</option>
-								<option value="5">New Construction / Rebuild</option>
-								<option value="6">Other</option>
+							<select name="service" required>
+								<option disabled selected>Service</option>
+								<option value="Small Screen Repair">Small Screen Repair</option>
+								<option value="Complete Rescreening">Complete Rescreening</option>
+								<option value="Structural Damage Repair">Structural Damage Repair</option>
+								<option value="New Construction / Rebuild">New Construction / Rebuild</option>
+								<option value="Other">Other</option>
 
 
 							</select>
 						</div>
+						<input type="hidden" name="source" value="Patio">
 						<button class="thm-btn" type="submit">
 							<span class="btn-wrap">
 								<span>Request Estimate</span>
@@ -685,5 +708,7 @@
 	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/scripts-2.js"></script>
 	<script src="assets/js/script.js"></script>
+	<script src="assets/js/modal.js"></script>
+
 </body>
 </html>		

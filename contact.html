@@ -23,75 +23,104 @@
 	<link rel="stylesheet" href="assets/css/uikit.min.css">	
 </head>
 <body>
-	<div id="preloader"></div>
-	<div class="up">
-		<a href="#" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
-	</div>
-	<header class="header">
-		<div class="header__top-wrap">
-			<div class="container">
-				<div class="header__top ul_li_between mt-none-15">
-					<div class="header__social mt-15">
-						<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-						<a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-						<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-					</div>
-					<ul class="header__info ul_li mt-15">
-						<li><i class="far fa-map-marker-alt"></i>Jacksonville, FL</li>
-						<li><i class="far fa-envelope"></i>contact@enclosurespecialist.com</li>
-					</ul>
-				</div>
+	<!-- preloder start  -->
+		<!-- <div class="preloder_part">
+			<div class="spinner">
+				<div class="dot1"></div>
+				<div class="dot2"></div>
 			</div>
-		</div>
-		<div class="header__main-wrap" data-uk-sticky="top: 250; animation: uk-animation-slide-top;">
-			<div class="container">
-				<div class="header__main ul_li_between">
-					<div class="header__main-left ul_li">
-						<div class="header__bar hamburger_menu">
-							<a href="#!"><img src="assets/img/icon/bar-2.svg" alt=""></a>
-						</div>
-						<div class="header__logo ml-50">
-							<a href="index.html"><img src="assets/img/logo/logo_transparent.webp" alt="logo"></a>
-						</div>
-					</div>
-					<div class="main-menu navbar navbar-expand-lg">
-						<nav class="main-menu__nav collapse navbar-collapse">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="services.html">Services</a></li>
-								<!-- <li><a href="blog.html">News</a></li> -->
-								<li>
-									<a href="/selfestimate.html">DIY Estimate</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-					<div class="header__main-right ul_li">
-						<div class="header__cta ul_li">
-							<div class="icon">
-								<img src="assets/img/icon/call.svg" alt="">
-							</div>
-							<div class="content">
-								<span>Need help?</span>
-								<a href="tel:9047539267">(904)-753-9267</a>
-							</div>
-						</div>
-						<div class="header__btn ml-40">
-							<a class="thm-btn thm-btn--transparent" href="contact.html">
-								<span class="btn-wrap">
-									<span>Request Estimate</span>
-									<span>Request Estimate</span>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- header end -->
+		</div> -->
+		<!-- preloder end  -->
 
+		<!-- back to top start -->
+		<div class="progress-wrap" style="display: none;">
+			<svg class="progress-circle svg-content" width="0" height="0" viewBox="-1 -1 102 102">
+				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+			</svg>
+		</div>
+		<!-- back to top end -->
+		
+		<!-- header start -->
+		<header class="header">
+			<div class="header__top-wrap">
+				<div class="container">
+					<div class="header__top ul_li_between mt-none-15">
+						<div class="header__social mt-15">
+							<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+							<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+						</div>
+						<ul class="header__info ul_li mt-15">
+							<li><i class="far fa-map-marker-alt"></i>Jacksonville, FL</li>
+							<li><i class="far fa-envelope"></i>contact@enclosurespecialist.com</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header__main-wrap" data-uk-sticky="top: 250; animation: uk-animation-slide-top;">
+				<div class="container">
+					<div class="header__main ul_li_between">
+						<div class="header__main-left ul_li">
+							<div class="header__bar hamburger_menu">
+								<a href="#!"><img src="assets/img/icon/bar-2.svg" alt=""></a>
+							</div>
+							<div class="header__logo ml-50">
+								<a href="index.html" style="font-size: 20px; font-weight: 700; color: black;">Screen Enclosure Specialist</a>
+							</div>
+						</div>
+						<div class="main-menu navbar navbar-expand-lg" id="navbarNav">
+							<nav class="main-menu__nav collapse navbar-collapse">
+								<ul>
+									<li><a href="#about">About</a></li>
+									<li><a href="services.html">Services</a></li>
+									<!-- <li><a href="blog.html">News</a></li> -->
+									<li><a href="#portfolio">Portfolio </a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="header__main-right ul_li">
+							<div class="header__cta ul_li">
+								<div class="icon">
+									<img src="assets/img/icon/call.svg" alt="">
+								</div>
+								<div class="content">
+									<span>Need help?</span>
+									<a href="tel:9047539267">(904)-753-9267</a>
+								</div>
+							</div>
+							<div class="header__btn ml-40">
+								<a class="thm-btn thm-btn--transparent" href="#clinox-booking-form">
+									<span class="btn-wrap">
+										<span>Request Estimate</span>
+										<span>Request Estimate</span>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header end -->
+			<!-- Modal -->
+			<div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="responseModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="responseModalLabel">Form Submission Status</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body" id="message">
+							<!-- Response message will be displayed here -->
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
 	<!-- slide bar start -->
 	<aside class="slide-bar">
 		<div class="close-mobile-menu">
@@ -102,12 +131,12 @@
 		<div class="sidebar-info">
 			<div class="sidebar-logo mb-30">
 				<a href="index.html">
-					<img src="assets/img/logo/logo-3.svg" alt="logo">
+					<img src="assets/img/logo/logo_transparent.webp" loading="lazy" alt="logo">
 				</a>
 			</div>
 			<div class="sidebar-content mb-45">
 				<h4 class="s-title">About us</h4>
-				<p>Based in North Florida, we specialize in rescreening and repair of screen enclosures, patios, and lanais. Our commitment to craftsmanship and quality ensures every project is executed with precision. With a team of expert technicians, we prioritize client satisfaction and maintain clean work sites, striving to exceed expectations in every job.</p>
+				<p>Based in North Florida, we specialize in rescreening and repair of pool enclosures, patios, and lanais. Our commitment to craftsmanship and quality ensures every project is executed with precision. With a team of expert technicians, we prioritize client satisfaction and maintain clean work sites, striving to exceed expectations in every job.</p>
 				<a class="thm_btn thm_btn-black" href="contact.html">Contact us<i class="fal fa-long-arrow-right"></i></a>
 			</div>
 			<div class="contact_list mb-30">
@@ -142,6 +171,7 @@
 				<li><a href="#about">About</a></li>
 				<li><a href="services.html">Services</a></li>
 				<!-- <li><a href="blog.html">News</a></li> -->
+				<li><a href="#portfolio">Portfolio </a></li>
 				<li>
 					<a href="/selfestimate.html">DIY Estimate</a>
 				</li>
@@ -177,7 +207,7 @@
 								</h2>
 							</div>
 							<div class="clinox-contact-form">
-								<form action="assets/mail/contactArt.php" method="POST">
+								<form action="assets/mail/contactArt.php" class="formSubmission" method="POST">
 									<div class="row">
 										<div class="col-md-6">
 											<input type="text" name="name" placeholder="Name*" required>
@@ -188,8 +218,8 @@
 										</div>
 										<div class="col-md-6">
 											<div class="service-select position-relative">
-												<select name="service">
-													<option value="Service">Service</option>
+												<select name="service" required>
+													<option disabled selected>Service*</option>
 													<option value="Small Screen Repair">Small Screen Repair</option>
 													<option value="Complete Rescreening">Complete Rescreening</option>
 													<option value="Structural Damage Repair">Structural Damage Repair</option>
@@ -200,8 +230,9 @@
 												</select>
 											</div>
 										</div>
+										<input type="hidden" name="source" value="Contact Us">
 										<div class="col-md-12">
-											<textarea name="comments" placeholder="Message"></textarea>
+											<textarea name="comments" placeholder="Additional info (Optional)"></textarea>
 										</div>
 									</div>
 									<button type="submit">Submit Now</button>
@@ -329,15 +360,14 @@
 	<script src="assets/js/waypoints.min.js"></script>
 	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
 	<script src="assets/js/jquery.filterizr.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-	<script src="assets/js/jquery.inputarrow.js"></script>
-	<script src="assets/js/gmap3.min.js"></script>
-	<script src="assets/js/script.js"></script>
 	<script src="assets/js/backToTop.js"></script>
 	<script src="assets/js/uikit.min.js"></script>
 	<script src="assets/js/metisMenu.min.js"></script>
+	<script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/scripts-2.js"></script>
-	
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/modal.js"></script>
+
 
 </body>
 </html>				
