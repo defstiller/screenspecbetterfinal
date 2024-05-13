@@ -3696,10 +3696,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   border-top-left-radius: 90px;
   border-bottom-right-radius: 90px;
-  -webkit-transform: translateX(60px);
-          transform: translateX(60px);
-  -webkit-transition: 1000ms all ease;
-  transition: 1000ms all ease;
+
 }
 .clinox-faq-img-wrap .faq-img1.view-on {
   -webkit-transform: translateX(0px);
