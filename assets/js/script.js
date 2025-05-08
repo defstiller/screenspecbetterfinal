@@ -370,7 +370,7 @@ Last change:    00/00/00
 					]
 				});
 				$('.clinox-project-slider').slick({
-					arrow: false,
+					arrow: true,
 					dots: true,
 					infinite: true,
 					slidesToShow: 4,

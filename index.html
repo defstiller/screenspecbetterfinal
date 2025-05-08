@@ -20,6 +20,43 @@
 	<link rel="stylesheet" href="assets/css/uikit.min.css">
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/style.min.css">
+	<style>.splide__slide img {
+		width: 100%;
+		height: auto;
+	  }
+	  .hamburger_menu {
+	width: 30px;
+	height: 24px;
+	position: relative;
+	cursor: pointer;
+	z-index: 1001;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.hamburger_menu span {
+	display: block;
+	height: 4px;
+	width: 100%;
+	background-color: #000;
+	border-radius: 2px;
+	transition: 0.3s ease-in-out;
+}
+
+/* When menu is open */
+.hamburger_menu.open span:nth-child(1) {
+	transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger_menu.open span:nth-child(2) {
+	opacity: 0;
+}
+
+.hamburger_menu.open span:nth-child(3) {
+	transform: rotate(-45deg) translate(6px, -6px);
+}
+</style>
 </head>
 <body>
 
@@ -48,9 +85,9 @@
 				<div class="container">
 					<div class="header__top ul_li_between mt-none-15">
 						<div class="header__social mt-15">
-							<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-							<a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-							<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+							<a href="https://www.facebook.com/enclosurespecialists/"><i class="fab fa-facebook-f"></i></a>
+							<a href="https://x.com/EncSpecialists"><i class="fab fa-twitter"></i></a>
+							<a href="https://www.instagram.com/enclosurespecialists/"><i class="fab fa-instagram"></i></a>
 						</div>
 						<ul class="header__info ul_li mt-15">
 							<li><i class="far fa-map-marker-alt"></i>Jacksonville, FL</li>
@@ -63,27 +100,34 @@
 				<div class="container">
 					<div class="header__main ul_li_between">
 						<div class="header__main-left ul_li">
-							<div class="header__bar hamburger_menu">
+							<div class="header__bar hamburger_menu" id="menu-toggle">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>												
+							<!-- <div class="header__bar hamburger_menu">
 								<a href="#!"><img src="assets/img/icon/bar-2.svg" alt=""></a>
-							</div>
-							<div class="header__logo ml-50">
+							</div> -->
+							<!-- <div class="header__logo ml-50">
 								<a href="index.html" style="font-size: 20px; font-weight: 700; color: black;">Screen Enclosure Specialists</a>
-							</div>
+							</div> -->
 						</div>
 						<div class="main-menu navbar navbar-expand-lg" id="navbarNav">
 							<nav class="main-menu__nav collapse navbar-collapse">
 								<ul>
 									<li><a href="#about">About</a></li>
-									<li><a href="services.html">Services</a></li>
-									<!-- <li><a href="blog.html">News</a></li> -->
-									<li><a href="#portfolio">Portfolio </a></li>
+									<li><a href="#clinox-service-feed">Services</a></li>
+									<li><a href="./blog.html">Blog</a></li>
+									<li><a href="#portnew">Portfolio </a></li>
+									<li><a href="#clinox-testimonial">Customer Reviews </a></li>
+
 								</ul>
 							</nav>
 						</div>
 						<div class="header__main-right ul_li">
-							<div class="header__cta ul_li">
+							<div class="header__cta ul_li" style="padding-right: 10px;" >
 								<div class="icon">
-									<img src="assets/img/icon/call.svg" alt="">
+									<img src="assets/img/icon/call.svg" alt="Call icon">
 								</div>
 								<div class="content">
 									<span>Need help?</span>
@@ -120,8 +164,8 @@
 				</div>
 				<div class="sidebar-content mb-45">
 					<h4 class="s-title">About us</h4>
-					<p>Based in North Florida, we specialize in construction and repair of pool enclosures, patios, and lanais. Our commitment to craftsmanship and quality ensures every project is executed with precision. With a team of expert technicians, we prioritize client satisfaction and maintain clean work sites, striving to exceed expectations in every job.</p>
-					<a class="thm_btn thm_btn-black" href="contact.html">Contact us<i class="fal fa-long-arrow-right"></i></a>
+					<p>Based in North Florida, we specialize in construction and repair of pool enclosures, patios, and lanais. Our commitment to craftsmanship and quality ensures every project is executed with precision. With a team of expert technicians, we prioritize client satisfaction and maintain clean job sites, striving to exceed expectations in every job.</p>
+					<a class="thm_btn thm_btn-black" href="#clinox-booking-form">Contact us<i class="fal fa-long-arrow-right"></i></a>
 				</div>
 				<div class="contact_list mb-30">
 					<h4 class="s-title">Contact us</h4>
@@ -141,9 +185,9 @@
 					</ul>
 				</div>
 				<div class="sidebar-social mt-20">
-					<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-					<a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-					<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.facebook.com/enclosurespecialists/"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://x.com/EncSpecialists"><i class="fab fa-twitter"></i></a>
+					<a href="https://www.instagram.com/enclosurespecialists/"><i class="fab fa-instagram"></i></a>
 				</div>
 			</div>
 			<!-- sidebar-info end -->
@@ -152,9 +196,10 @@
 			<nav class="side-mobile-menu">
 				<ul id="mobile-menu-active">
 					<li><a href="#about">About</a></li>
-					<li><a href="services.html">Services</a></li>
-					<!-- <li><a href="blog.html">News</a></li> -->
-					<li><a href="#portfolio">Portfolio </a></li>
+					<li><a href="#clinox-service-feed">Services</a></li>
+					<li><a href="./blog.html">Blog</a></li>
+					<li><a href="#portnew">Portfolio </a></li>
+					<li><a href="#clinox-testimonial">Customer Reviews </a></li>
 				</ul>
 			</nav>
 			<!-- side-mobile-menu end -->
@@ -243,7 +288,9 @@
 									Enclosures
 									done <br><span>The Right Way<img src="assets/img/shape/st_shape.svg" alt="shape" loading="lazy"></span>
 								</h2>
-								<p class="wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1500ms">Based in North Florida, we specialize in construction and repair of pool enclosures, patios, and lanais. Our commitment to craftsmanship and quality ensures every project is executed with precision. With a team of expert technicians, we prioritize client satisfaction and maintain clean work sites, striving to exceed expectations in every job.
+								<p class="wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1500ms">We build and repair pool enclosures, lanais, and screen rooms throughout North Florida with a focus on long-term durability and honest workmanship. Every project is personally overseen by the owner—from the initial quote to the final screw.
+
+									We take pride in using quality materials, keeping clean worksites, and delivering consistent results. Our goal isn’t to be the biggest - it’s to be the most reliable. That means showing up on time, doing the job right, and making sure you're fully satisfied before we pack up.
 								</p></p>
 							</div>
 							<div class="about__info ul_li">
@@ -253,8 +300,8 @@
 										<img src="assets/img/shape/a_shape.svg" loading="lazy" alt="shape">
 									</div>
 									<div class="content">
-										<h3>Expert Technicians</h3>
-										<p>Our team is dedicated to delivering quality. We ensure every project is executed flawlessly, with attention to detail and precision.</p>
+										<h3>Hands-On Expertise</h3>
+										<p>You’re not dealing with a sales team - you’re working directly with the person who measures, plans, and builds your enclosure. That means no miscommunication, no surprises, and full accountability every step of the way.</p>
 									</div>
 								</div>
 								<div class="about__info-box d-flex wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1500ms">
@@ -263,11 +310,12 @@
 										<img src="assets/img/shape/a_shape.svg" loading="lazy" alt="shape">
 									</div>
 									<div class="content">
-										<h3>Clean Worksite</h3>
-										<p>Your property is respected by our crew, ensuring a clean and orderly worksite after each day's work, minimizing disruption and maintaining aesthetics.</p>
+										<h3>Respect for Your Space</h3>
+										<p>We keep the work area tidy and organized throughout the project. Materials and tools are handled with care, and we clean up thoroughly at the end of each day to minimize disruption to your home.</p>
 									</div>
 								</div>
 							</div>
+							
 							<div class="ul_li mt-10">
 								<!-- <div class="about__experince mt-20 mr-60 wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1500ms">
 									<h2><span class="counter">13</span></h2>
@@ -310,64 +358,289 @@
 				</div>
 			</div>
 			<!-- about end -->
-
+<!-- Start of faq section
+	============================================= -->
+	<section id="clinox-faq" class="clinox-faq-section">
+		<div class="container">
+			<div class="clearfix-faq-content">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="clinox-faq-img-wrap position-relative">
+							<span class="bg-shape position-absolute"></span>
+							<div class="faq-img1 bg-img-area">
+								<img src="assets/img/project/7Mu1blA1hSE.webp" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="clinox-faq-text-wrapper">
+							<div class="clinox-section-title headline pera-content pr-text-in">
+								<h2>
+									<span class="pr-text-in_item1">
+										<span class="pr-text-in_item2">
+											<span class="pr-text-in_item3">
+												Why choose <b>us?</b>
+											</span>
+										</span>
+									</span>
+								</h2>
+							</div>
+							<div class="clinox-faq-accordion">
+								<div class="accordion" id="accordionExample2">
+									<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+										<h2 class="accordion-header" id="headingOne2">
+											<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true">
+												Fully Licensed & Insured
+											</button>
+										</h2>
+										<div id="collapseOne2" class="accordion-collapse collapse show" aria-labelledby="headingOne2" data-bs-parent="#accordionExample2">
+											<div class="accordion-body">
+												We are fully licensed and insured (DBPR License #SCC131153585), giving you peace of mind that all work meets state requirements and is backed by full liability coverage.
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+										<h2 class="accordion-header" id="headingTwo2">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false">
+												Communication & Responsiveness
+											</button>
+										</h2>
+										<div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo2" data-bs-parent="#accordionExample2">
+											<div class="accordion-body">
+												We prioritize clear, timely communication. From the first call to final walkthrough, you’ll speak directly with the person building your enclosure - no middlemen, no delays.											
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+										<h2 class="accordion-header" id="headingThree2">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false">
+												Guarantee
+											</button>
+										</h2>
+										<div id="collapseThree2" class="accordion-collapse collapse" aria-labelledby="headingThree2" data-bs-parent="#accordionExample2">
+											<div class="accordion-body">
+												All labor and parts are backed by a one-year guarantee. If any issues come up, we handle them directly - no runaround, no excuses.
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1500ms">
+										<h2 class="accordion-header" id="headingFour">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false">
+												Quality Driven
+											</button>
+										</h2>
+										<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample2">
+											<div class="accordion-body">
+												The owner personally completes your installation—not rushed subcontractors. We focus on doing it right the first time, with attention to detail and craftsmanship that speaks for itself.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>		
+<!-- End of faq section
+	============================================= -->
 			<!-- proejct start -->
-			<!-- <div class="project" id="portfolio">
+			<div class="clinox-section-title text-center headline pera-content" id="portnew" style="margin: 30px;">
+				<span class="sub-title">Portfolio</span>
+				<h2>Recent
+					<span>Projects</span>
+				</h2>
+			</div>
+			<div class="project" id="portfolio">
 				<div class="project__slider">
 					<div class="project__item">
 						<div class="project__img">
-							<img src="assets/img/project/6X3IlXtY7-E.webp" alt="Pool Screen Enclosure" loading="lazy">
-						</div>
-						<div class="project__info">
-							<h3>Pool Screen Enclosure</h3>
-							<span>Jacksonville</span>
+							<img src="assets/img/project/skQog3t5JsA.webp" alt="Screen Enclosure" loading="lazy">
 						</div>
 						<span class="project__number">01</span>
 					</div>
 					<div class="project__item">
 						<div class="project__img">
-							<img src="assets/img/project/FJGF4YpGdVQ.webp" alt="Lanai" loading="lazy">
-						</div>
-						<div class="project__info">
-							<h3>Lanai</h3>
-							<span>St Augustine</span>
+							<img src="assets/img/project/7Mu1blA1hSE.webp" alt="Screen Enclosure" loading="lazy">
 						</div>
 						<span class="project__number">02</span>
 					</div>
 					<div class="project__item">
 						<div class="project__img">
-							<img src="assets/img/project/VrqI6qDaw7U.webp" alt="Screen Enclosure" loading="lazy">
-						</div>
-						<div class="project__info">
-							<h3>Screen Enclosure</h3>
-							<span>Orange Park</span>
+							<img src="assets/img/project/asdasdasd.webp" alt="Screen Enclosure" loading="lazy">
 						</div>
 						<span class="project__number">03</span>
 					</div>
 					<div class="project__item">
 						<div class="project__img">
-							<img src="assets/img/project/Jw1e2M_t9n4.webp" alt="Screen Enclosure" loading="lazy">
-						</div>
-						<div class="project__info">
-							<h3>Screen Enclosure</h3>
-							<span>Jacksonville</span>
+							<img src="assets/img/project/5IDYufFZzIQ.webp" alt="Pool Screen Enclosure" loading="lazy">
 						</div>
 						<span class="project__number">04</span>
 					</div>
 					<div class="project__item">
 						<div class="project__img">
-							<img src="assets/img/project/mwrF30yyxlQ.webp" alt="Screen Room" loading="lazy">
-						</div>
-						<div class="project__info">
-							<h3>Screen Room</h3>
-							<span>St Johns</span>
+							<img src="assets/img/project/2aXLP4nrPv8.webp" alt="Lanai" loading="lazy">
 						</div>
 						<span class="project__number">05</span>
 					</div>
+					<div class="project__item">
+						<div class="project__img">
+							<img src="assets/img/project/VrqI6qDaw7U.webp" alt="Screen Enclosure" loading="lazy">
+						</div>
+						<span class="project__number">06</span>
+					</div>
+					<div class="project__item">
+						<div class="project__img">
+							<img src="assets/img/project/Jw1e2M_t9n4.webp" alt="Screen Enclosure" loading="lazy">
+						</div>
+						<span class="project__number">07</span>
+					</div>
+					<div class="project__item">
+						<div class="project__img">
+							<img src="assets/img/project/XAgn_8V26nA.webp" alt="Screen Room" loading="lazy">
+						</div>
+						<span class="project__number">08</span>
+					</div>
+					<div class="project__item">
+						<div class="project__img">
+							<img src="assets/img/project/fJRxMDsZ7I4.webp" alt="Screen Enclosure" loading="lazy">
+						</div>
+						<span class="project__number">09</span>
+					</div>
+					<div class="project__item">
+						<div class="project__img">
+							<img src="assets/img/project/pAK7TWjpFms.webp" alt="Screen Enclosure" loading="lazy">
+						</div>
+						<span class="project__number">10</span>
+					</div>
+					<div class="project__item">
+						<div class="project__img">
+							<img src="assets/img/project/Uv3qZiiGppw.webp" alt="Screen Enclosure" loading="lazy">
+						</div>
+						<span class="project__number">10</span>
+					</div>
+					<div class="project__item">
+						<div class="project__img">
+							<img src="assets/img/project/gGjeR9zFt78.webp" alt="Screen Enclosure" loading="lazy">
+						</div>
+						<span class="project__number">11</span>
+					</div>
 				</div>
-			</div> -->
+			</div>
 			<!-- proejct end -->
+<!-- Start of Testimonial section
+	============================================= -->
+	<section id="clinox-testimonial" class="clinox-testimonial-section">
+		<div class="container">
+			<div class="clinox-testimonial-top-content d-flex justify-content-between align-items-center">
+				<div class="clinox-section-title headline pera-content pr-text-in">
+					<h3 class="sub-title d-inline-block">
+						<span class="pr-text-in_item1">
+							<span class="pr-text-in_item2">
+								<span class="pr-text-in_item3">
+									Testimonials
+								</span>
+							</span>
+						</span>
+					</h3>
+					<h2>
+						<span class="pr-text-in_item1">
+							<span class="pr-text-in_item2">
+								<span class="pr-text-in_item3">
+									Some <b>Reviews</b> From  Our Clients.
+								</span>
+							</span>
+						</span>
+					</h2>
+				</div>
+				<div class="carousel_nav  clearfix">
+					<button type="button" class="testi-left_arrow"><i class="far fa-long-arrow-left"></i></button>
+					<button type="button" class="testi-right_arrow"><i class="far fa-long-arrow-right"></i></button>
+				</div>
+			</div>
+			<div class="clinox-testimonial-content">
+				<div class="clinox-testimonial-slider">
+					<div class="slider-inner-item">
+						<div class="clinox-testimonial-item">
+							<div class="inner-img-text-wrap  position-relative">
 
+								<div class="inner-icon-text">
+									<div class="inner-icon">
+										<img src="assets/img/icon/qt1.png" alt="">
+									</div>
+									<div class="inner-text headline pera-content">
+										<p>Superb customer service. Responsive, flexible, and honest. No upselling but comprehensive report on inspection findings. Great experience thus far.										</p>
+										<h3>Frank V.</h3>
+										<span>Google Reviews</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-inner-item">
+						<div class="clinox-testimonial-item">
+							<div class="inner-img-text-wrap  position-relative">
+								<div class="inner-img">
+									<img src="assets/img/about/tst2.png" alt="">
+								</div>
+								<div class="inner-icon-text">
+									<div class="inner-icon">
+										<img src="assets/img/icon/qt1.png" alt="">
+									</div>
+									<div class="inner-text headline pera-content">
+										<p>We can not say enough good things about this company. Artiom came to our home to give us a free estimate. Very quickly he got back to us with his estimate. He was very thorough and it was very fair for the large job we were having done. Artiom and his team always showed up on time and did a phenomenal job on our pool enclosure. We could not be happier. We would highly recommend Screen Enclosure Specialists to anyone looking for an outstanding job done on their enclosure. Thank you Artiom and your team.										</p>
+										<h3>Janet J.</h3>
+										<span>Google Reviews</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-inner-item">
+						<div class="clinox-testimonial-item">
+							<div class="inner-img-text-wrap  position-relative">
+								<div class="inner-img">
+									<img src="assets/img/about/tst1.png" alt="">
+								</div>
+								<div class="inner-icon-text">
+									<div class="inner-icon">
+										<img src="assets/img/icon/qt1.png" alt="">
+									</div>
+									<div class="inner-text headline pera-content">
+										<p>Art and his crew did a fantastic job! They showed up when they said they would and cleaned up afterwards. My new screen enclosure looks amazing. I highly recommend Screen Enclosure Specialists.										</p>
+										<h3>Virginia M.</h3>
+										<span>Google Reviews</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-inner-item">
+						<div class="clinox-testimonial-item">
+							<div class="inner-img-text-wrap  position-relative">
+								<div class="inner-img">
+									<img src="assets/img/about/tst2.png" alt="">
+								</div>
+								<div class="inner-icon-text">
+									<div class="inner-icon">
+										<img src="assets/img/icon/qt1.png" alt="">
+									</div>
+									<div class="inner-text headline pera-content">
+										<p>They were great to deal with. Very professional and knowledgeable. They responded to calls/text in a timely manner. Quality, worksmanship and value. I would definitely recommend them.										</p>
+										<h3>Robert G.</h3>
+										<span>Thumbtrack Reviews</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>	
+<!-- End of Testimonial section
+	============================================= -->
 			<!-- info start -->
 			<section id="clinox-booking-form" class="clinox-booking-form-section page-section-padding">
 				<div class="container">
@@ -404,10 +677,10 @@
 													<div class="service-select position-relative">
 														<select name="service" required>
 															<option disabled selected>Service*</option>
+															<option value="New Construction / Rebuild">New Construction / Rebuild</option>
 															<option value="Small Screen Repair">Small Screen Repair</option>
 															<option value="Complete Rescreening">Complete Rescreening</option>
 															<option value="Structural Damage Repair">Structural Damage Repair</option>
-															<option value="New Construction / Rebuild">New Construction / Rebuild</option>
 															<option value="Other">Other</option>
 
 							
@@ -442,8 +715,8 @@
 									<img src="assets/img/icon/ic15.png" alt="location" loading="lazy">
 								</div>
 								<div class="inner-text headline">
-									<h4>Location</h4>
-									<span>Jacksonville, FL</span>
+									<h4>Serving</h4>
+									<span>North Florida</span>
 								</div>
 							</div>
 						</div>
@@ -564,7 +837,82 @@
 				</div>
 			</section> -->
 			<!-- blog end -->
-
+<!-- Start of Service Feed section
+	============================================= -->
+	<section id="clinox-service-feed" class="clinox-service-feed-section" style="margin-bottom: 30px; padding-top: 0;">
+		<div class="clinox-section-title text-center headline pera-content" id="portnew" style="margin-bottom: 30px; padding-top: 0;">
+		  <span class="sub-title">How can we help you?</span>
+		  <h2>Our <span>Services</span></h2>
+		</div>
+		<div class="container">
+		  <div class="clinox-service-feed-content">
+			<div class="row">
+			  <div class="col-lg-4 col-md-6">
+				<div class="clinex-service-item-2 text-center">
+				  <div class="inner-text headline pera-content">
+					<h3>New Enclosure Construction</h3>
+					<p>We design and build screen enclosures from the ground up—engineered for durability, tailored to your layout, and built using only high-quality, American-made materials.</p>
+					<a class="read-more d-flex justify-content-center align-items-center" href="./contact.html">Contact Us</a>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <div class="col-lg-4 col-md-6">
+				<div class="clinex-service-item-2 text-center">
+				  <div class="inner-text headline pera-content">
+					<h3>Concrete & Paver Work</h3>
+					<p>No need to coordinate with outside crews - we handle the concrete slabs and paver bases for your enclosure, so your project runs smoother from start to finish.</p>
+					<a class="read-more d-flex justify-content-center align-items-center" href="./contact.html">Contact Us</a>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <div class="col-lg-4 col-md-6">
+				<div class="clinex-service-item-2 text-center">
+				  <div class="inner-text headline pera-content">
+					<h3>Rebuild & Replacement</h3>
+					<p>Whether storm-damaged or worn out, we replace aging enclosures with structurally sound, visually clean builds that restore your outdoor space - often better than the original.</p>
+					<a class="read-more d-flex justify-content-center align-items-center" href="./contact.html">Contact Us</a>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <div class="col-lg-4 col-md-6">
+				<div class="clinex-service-item-2 text-center">
+				  <div class="inner-text headline pera-content">
+					<h3>Composite Roof Enclosures</h3>
+					<p>We install solid-roof enclosures using insulated aluminum panels—great for covered patios that need full shade and better rain protection than screen-only builds.</p>
+					<a class="read-more d-flex justify-content-center align-items-center" href="./contact.html">Contact Us</a>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <div class="col-lg-4 col-md-6">
+				<div class="clinex-service-item-2 text-center">
+				  <div class="inner-text headline pera-content">
+					<h3>Motorized Screens</h3>
+					<p>We install custom-fit retractable motorized screens—perfect for patios, lanais, or garages. Enjoy shade and privacy on demand with sleek integration and remote control.</p>
+					<a class="read-more d-flex justify-content-center align-items-center" href="./contact.html">Contact Us</a>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <div class="col-lg-4 col-md-6">
+				<div class="clinex-service-item-2 text-center">
+				  <div class="inner-text headline pera-content">
+					<h3>Rescreening</h3>
+					<p>We replace all screening on your existing structure, leaving it looking new and built to last. No shortcuts—just clean, tight screens installed with precision.</p>
+					<a class="read-more d-flex justify-content-center align-items-center" href="./contact.html">Contact Us</a>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	  
+<!-- End of Service Feed section
+	============================================= -->
 		</main>
 
 		<footer class="footer pt-60" data-background="assets/img/bg/footer-noise.png" loading="lazy">
@@ -608,15 +956,16 @@
 					<div class="col-lg-3 col-md-6 footer__col mt-30">
 						<div class="footer__widget">
 							<h3>About Us</h3>
-							<p>Based in North Florida, we specialize in construction and repair of screen enclosures, patios, and lanais. Our commitment to craftsmanship and quality ensures every project is executed with precision. With a team of expert technicians, we prioritize client satisfaction and maintain clean work sites, striving to exceed expectations in every job.</p>
+							<p>Based in North Florida, we specialize in construction and repair of screen enclosures, patios, and lanais. Our commitment to craftsmanship and quality ensures every project is executed with precision. With a team of expert technicians, we prioritize client satisfaction and maintain clean job sites, striving to exceed expectations in every job.</p>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6 footer__col mt-30">
 						<div class="footer__widget">
 							<h3>Helpful Links</h3>
 							<ul class="footer__links list-unstyled">
-								<li><a href="about.html">About Us</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="#about">About Us</a></li>
+								<li><a href="#clinox-booking-form">Contact Us</a></li>
+								<li><a href="https://enclosurespecialist.com/blog">Blog</a></li>
 							</ul>
 						</div>
 					</div>
@@ -625,7 +974,7 @@
 							<h3>Social</h3>
 							<ul class="footer__links list-unstyled">
 								<!-- <li><a href="blog.html">Recent News</a></li> -->
-								<li><a href="project.html">Recent Project</a></li>
+								<li><a href="#portnew">Recent Projects</a></li>
 							</ul>
 						</div>
 					</div>
@@ -643,11 +992,11 @@
 				</div>
 				<div class="footer__bottom ul_li_between pt-15 pb-30">
 					<div class="footer__copyright mt-15">
-						© Copyright ©2024 <a href="#!">Screen Enclosure Specialists LLC</a>. All Rights Reserved
+						© Copyright ©2024 <a href="https://enclosurespecialist.com">Screen Enclosure Specialists LLC</a>. All Rights Reserved
 					</div>
 					<ul class="footer__nav ul_li mt-15">
 						<li><a href="https://docs.google.com/document/d/1ekIY4Hor9cT3sQnKGvP8kdr6kNJCUWl5p1gre2Fr2mM/edit?usp=sharing">Terms and conditions</a></li>
-						<li><a href="https://docs.google.com/document/d/1t6BLzAlgo9Tm5PpvjzoYVASgoScg58jGDCSA1p1iUmM/edit?usp=sharing"> Privacy policy</a></li>
+						<li><a href="/privacy.html"> Privacy policy</a></li>
 					</ul>
 				</div>
 			</div>

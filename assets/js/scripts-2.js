@@ -30,28 +30,30 @@
 		e.preventDefault();
 	});
 
-	$(".hamburger_menu > a").on("click", function (e) {
+	$("#menu-toggle").on("click", function (e) {
 		e.preventDefault();
 		$(".slide-bar").toggleClass("show");
-		$("body").addClass("on-side");
-		$('.body-overlay').addClass('active');
-		$(this).addClass('active');
+		$("body").toggleClass("on-side");
+		$('.body-overlay').toggleClass('active');
+		$(this).toggleClass('open'); // triggers X animation
 	});
+	
 
 	$(".close-mobile-menu > a").on("click", function (e) {
 		e.preventDefault();
 		$(".slide-bar").removeClass("show");
 		$("body").removeClass("on-side");
 		$('.body-overlay').removeClass('active');
-		$('.hamburger_menu > a').removeClass('active');
+		$('#menu-toggle').removeClass('open');
 	});
-
+	
 	$('.body-overlay').on('click', function () {
 		$(this).removeClass('active');
 		$(".slide-bar").removeClass("show");
 		$("body").removeClass("on-side");
-		$('.hamburger-menu > a').removeClass('active');
+		$('#menu-toggle').removeClass('open');
 	});
+	
 	// mobile menu end
 
 	// brand slide
@@ -94,8 +96,8 @@
 		autoplay: true,
   		autoplaySpeed: 3000,
 		slidesToScroll: 1,
-		dots: false,
 		arrows: true,
+		dots: false,
 		prevArrow: '<i class="service-arrow service-prev far fa-long-arrow-left"></i>',
 		nextArrow: '<i class="service-arrow service-next far fa-long-arrow-right"></i>',
 		responsive: [
@@ -122,8 +124,8 @@
     
 	$('.project__slider').slick({
 		infinite: true,
-		dots: false,
-		arrows: false,
+		dots: true,
+		arrows: true,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		centerMode: true,
@@ -241,3 +243,4 @@
 
 
 })(jQuery);
+
