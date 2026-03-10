@@ -4712,6 +4712,47 @@ h1, h2, h3, h4, h5, h6 {
 .clinox-portfolio-details-section {
   overflow: hidden;
 }
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.86);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 24px;
+}
+
+.lightbox.is-open{ display:flex; }
+
+.lightbox__img{
+  max-width: min(1100px, 100%);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.4);
+}
+
+.lightbox__close{
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font-size: 28px;
+  line-height: 44px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px){
+  .lightbox{ padding: 12px; }
+  .lightbox__img{ border-radius: 8px; }
+}
 
 /*---------------------------------------------------- */
 /*How Work area*/
@@ -5230,7 +5271,7 @@ dl, ol, ul {
     margin-left: 0;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 300px) {
   .header__btn {
     display: none;
   }
@@ -11980,5 +12021,43 @@ Color Code
   .clinox-main-slider-item .slider-main-text h1 {
     font-size: 36px;
   }
+}
+/* Make room so the sticky bar doesn't cover content on mobile */
+:root { --sticky-call-h: 64px; }
+
+:root{
+  --sticky-gap: 12px;
+  --sticky-h: 56px;
+}
+
+/* keep page content from being covered */
+.fab-call{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #0e3f47; /* match your hero CTA exactly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 32px rgba(0,0,0,.28);
+  z-index: 9999;
+  transition: transform .15s ease;
+}
+
+.fab-call img{
+  width: 26px;
+  height: 26px;
+  filter: brightness(0) invert(1); /* ensures white icon */
+}
+
+.fab-call:active{
+  transform: scale(.95);
+}
+
+@media (min-width: 901px){
+  .fab-call{ display:none; }
 }
 /*---------------------------------------------------- */

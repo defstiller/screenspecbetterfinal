@@ -1,0 +1,1900 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<title>Screen Enclosure Specialists</title>
+	<meta name="description" content="Expert screen enclosure construction and rescreening services. High-quality materials, guaranteed satisfaction, and professional craftsmanship for your pool, patio, and lanai.">
+
+	<meta name="author" content="Artiom">
+	<link rel="shortcut icon" href="assets/img/logo/logo-transparent-png_16x16.png" type="image/x-icon">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="assets/css/flaticon-2.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/slick-theme.css">
+	<link rel="stylesheet" href="assets/css/metisMenu.css">
+	<link rel="stylesheet" href="assets/css/uikit.min.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root{
+  --bg: #f3f4f6;
+  --panel: #ffffff;
+  --panel2: #f8fafc;
+
+  --text: #0f172a;
+  --muted: #475569;
+  --muted2: #64748b;
+
+  --border: #e2e8f0;
+  --shadow: 0 18px 45px rgba(15, 23, 42, .12);
+
+  --radius: 18px;
+  --radius2: 14px;
+
+  --focus: 0 0 0 3px rgba(59,130,246,.22);
+
+  --btn: #f1f5f9;
+  --btnHover: #e2e8f0;
+
+  --primary: #2563eb;
+  --danger: #ef4444;
+  --ok: #10b981;
+
+  --max: 1080px;
+
+  /* keep these for when a background image exists, but they won't dominate */
+  --imgDim: rgba(255,255,255,.65);
+  --imgDim2: rgba(255,255,255,.85);
+}
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+    }
+
+    .app{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 28px 16px;
+    }
+
+    .shell{
+      width: 100%;
+      max-width: var(--max);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 8px);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background: #f8fafc;
+      backdrop-filter: none;
+    }
+
+    .stage{
+      position: relative;
+      min-height: 620px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+    }
+
+    @media (max-width: 980px){
+      .stage{ grid-template-columns: 1fr; }
+      .summary{ border-left:0 !important; border-top:1px solid var(--border); }
+    }
+
+    /* Left: step content with big image background */
+    .step{
+      position:relative;
+      padding: 22px;
+      background:
+        linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%),
+        var(--stepBg, radial-gradient(900px 600px at 40% 10%, rgba(125,211,252,.18), transparent)),
+        url("") center/cover no-repeat;
+      transition: background-image .35s ease, background-color .35s ease;
+    }
+
+    .step::before{
+display:none
+    }
+
+    .step > *{ position:relative; }
+
+    .topRow{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .titleBlock h1{
+      margin: 2px 0 0;
+      font-size: 24px;
+      line-height:1.2;
+      letter-spacing:.2px;
+    }
+
+    .titleBlock p{
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 62ch;
+    }
+
+    .pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--muted2);
+  font-size: 12px;
+  white-space:nowrap;
+}
+.pill strong{ color: var(--text); font-weight:700; }
+
+    .card{
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-top: 14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    @media (max-width: 640px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .choice{
+      border: 1px solid var(--border);
+      border-radius: var(--radius2);
+        background: var(--panel);
+      overflow:hidden;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      text-align:left;
+      width:100%;
+      color: var(--text);
+      display:flex;
+      flex-direction:column;
+      min-height: 122px;
+      box-shadow: 0 8px 22px rgba(15,23,42,.10);
+    }
+
+    .choice:hover{
+  transform: translateY(-1px);
+  background: #f3f4f6;
+}
+    .choice[aria-pressed="true"]{
+  border-color: rgba(37,99,235,.40);
+  background: rgba(37,99,235,.06);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+}
+
+    .choice .img{
+  height: 100px;               /* a bit taller reads better */
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.55)),
+    var(--thumb, radial-gradient(900px 260px at 20% 60%, rgba(255,255,255,.10), transparent));
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--border);
+}
+
+
+    .choice .body{
+      padding: 12px 12px 14px;
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+    }
+
+    .choice .body .label{
+      font-weight: 650;
+      letter-spacing:.2px;
+    }
+    .choice .body .desc{
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.25;
+    }
+
+    .fields{
+      display:grid;
+      gap: 12px;
+    }
+
+    .fieldRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 640px){
+      .fieldRow{ grid-template-columns: 1fr; }
+    }
+
+    label{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    input[type="number"], input[type="text"]{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  outline:none;
+}
+input:focus{
+  box-shadow: var(--focus);
+  border-color: rgba(37,99,235,.45);
+}
+
+    .toggleRow{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(0,0,0,.18);
+    }
+    .toggleRow input{ width: 18px; height: 18px; }
+
+    .alert{
+      border: 1px solid rgba(251,113,133,.35);
+      background: rgba(251,113,133,.10);
+      border-radius: 14px;
+      padding: 12px;
+      color: rgba(255,255,255,.90);
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+    }
+    .alert .small{ color: rgba(255,255,255,.75); font-size: 13px; line-height:1.35; }
+
+    .btnRow{
+      margin-top: 14px;
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+
+    button{
+      appearance:none;
+      border: 1px solid var(--border);
+      background: var(--btn);
+      color: var(--text);
+      padding: 11px 14px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-weight: 650;
+      letter-spacing:.2px;
+    }
+    button:hover{ background: var(--btnHover); }
+    button:focus{ outline:none; box-shadow: var(--focus); }
+
+    .primary{
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.primary:hover{
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+    .ghost{
+  background: #f8fafc;
+  color: var(--muted);
+}
+
+.ghost:hover{
+  background: #e2e8f0;
+}
+    .danger{
+      border-color: rgba(251,113,133,.45);
+      background: rgba(251,113,133,.14);
+    }
+
+    .progress{
+  margin-top: 10px;
+  height: 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow:hidden;
+  background: #e2e8f0;
+}
+.bar{
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(37,99,235,.95), rgba(37,99,235,.55));
+  transition: width .25s ease;
+}
+
+    /* Right: summary */
+    .summary{
+  padding: 18px;
+  border-left: 1px solid #d6dee6;
+  background: #f1f5f9;
+}
+    .summary h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing:.2px;
+    }
+    .kv{
+      display:grid;
+      gap: 10px;
+    }
+    .kvItem{
+      border: 1px solid var(--border);
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+    .k{
+      font-size: 11px;
+      color: var(--muted2);
+      margin-bottom: 4px;
+    }
+    .v{
+      font-size: 13px;
+      color: var(--text);
+      line-height:1.25;
+      word-break: break-word;
+    }
+    .quoteBox{
+      margin-top: 14px;
+      border: 1px solid rgba(52,211,153,.30);
+      background: rgba(52,211,153,.10);
+      border-radius: 16px;
+      padding: 12px;
+    }
+    .quoteBox .amt{
+      font-size: 22px;
+      font-weight: 800;
+      margin: 4px 0 6px;
+      letter-spacing:.3px;
+    }
+    .quoteBox .note{
+  color: var(--muted);
+  font-size: 12px;
+  line-height:1.35;
+}
+    .mini{
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted2);
+      line-height:1.35;
+    }
+
+    .hidden{ display:none !important; }
+    .fadeIn{
+      animation: fadeIn .20s ease;
+    }
+    @keyframes fadeIn{
+      from{ opacity:.0; transform: translateY(3px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
+  </style>
+  <link rel='stylesheet' href='assets/css/estimate-refresh.css?v=20260308-18'>
+</head>
+<a href="tel:+19047539267" class="fab-call" aria-label="Call us">
+  								<div class="icon">
+									<img src="assets/img/icon/call.svg" alt="Call icon">
+								</div>
+</a>
+<div class="body_wrap">
+
+		<!-- preloder start  -->
+		<!-- <div class="preloder_part">
+			<div class="spinner">
+				<div class="dot1"></div>
+				<div class="dot2"></div>
+			</div>
+		</div> -->
+		<!-- preloder end  -->
+
+		<!-- back to top start -->
+		<div class="progress-wrap" style="display: none;">
+			<svg class="progress-circle svg-content" width="0" height="0" viewBox="-1 -1 102 102">
+				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+			</svg>
+		</div>
+		<!-- back to top end -->
+		
+		<!-- header start -->
+		<header class="estimate-page-header">
+			<div class="estimate-page-header__inner">
+				<a class="estimate-page-header__brand" href="./index.html" aria-label="Screen Enclosure Specialists home">
+					<span class="estimate-page-header__brand-copy">
+						<span class="estimate-page-header__eyebrow">Jacksonville, Florida</span>
+						<strong class="estimate-page-header__title">Screen Enclosure Specialists</strong>
+						<span class="estimate-page-header__meta">Online estimate tool</span>
+					</span>
+				</a>
+
+				<div class="estimate-page-header__chips" aria-label="Estimate details">
+					<span class="estimate-page-header__chip">Free online estimate</span>
+					<span class="estimate-page-header__chip">Fast follow-up</span>
+					<span class="estimate-page-header__chip">Call with questions</span>
+				</div>
+
+				<div class="estimate-page-header__actions">
+					<a class="estimate-page-header__phone" href="tel:9047539267">
+						<span class="estimate-page-header__phone-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></span>
+						<span class="estimate-page-header__phone-copy">
+							<small>Questions while estimating?</small>
+							<strong>(904) 753-9267</strong>
+						</span>
+					</a>
+					<a class="estimate-page-header__contact" href="./index.html">View website</a>
+				</div>
+			</div>
+		</header>
+		<!-- header end -->
+
+		<!-- slide bar end -->
+  
+  <main class="app">
+    <section class="shell">
+      <div class="stage">
+        <!-- STEP (left) -->
+        <div id="step" class="step">
+          <div class="topRow">
+            <div class="titleBlock">
+              <h1 id="stepTitle">Instant Quote</h1>
+              <p id="stepSubtitle">Answer a few questions. You’ll see a step-by-step quote summary on the right.</p>
+              <div class="progress" aria-label="Progress">
+                <div id="bar" class="bar"></div>
+              </div>
+            </div>
+            <div class="pill">
+              Step <strong id="stepIndex">1</strong>/<span id="stepTotal">1</span>
+            </div>
+          </div>
+
+          <div id="stepBody" class="card fadeIn"></div>
+
+          <div class="btnRow">
+            <button id="backBtn" class="ghost" type="button">Back</button>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button id="resetBtn" class="ghost" type="button">Reset</button>
+              <button id="nextBtn" class="primary" type="button">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUMMARY (right) -->
+        <aside class="summary">
+          <h2>Quote Summary</h2>
+          <div class="kv" id="summaryKv"></div>
+
+          <div class="quoteBox">
+            <div class="k">Estimated range (stub)</div>
+            <div id="quoteAmt" class="amt">$—</div>
+            <div class="note">
+              Pricing logic isn’t included here. Wire your real calculation into <code>computeQuote()</code>.
+            </div>
+          </div>
+
+          <div class="mini">
+            Tip: Replace the background image URLs in <code>BG</code> / <code>cardBg</code> with real photos for each selection.
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="estq-footer" aria-label="Estimate page footer">
+    <div class="estq-footer__inner">
+      <section class="estq-footer__panel estq-footer__panel--brand">
+        <span class="estq-footer__eyebrow">Screen Enclosure Specialists</span>
+        <h2 class="estq-footer__title">Need a real person before you move forward?</h2>
+        <p class="estq-footer__copy">
+          This estimator is built to give you a rough project price fast. If you want help choosing the right setup, checking measurements, or moving into an on-site quote, reach out directly.
+        </p>
+        <div class="estq-footer__actions">
+          <a class="estq-footer__action estq-footer__action--primary" href="./contact.html">Contact us</a>
+          <a class="estq-footer__action estq-footer__action--ghost" href="./index.html">View website</a>
+        </div>
+        <p class="estq-footer__note">
+          Online estimate only. Final pricing can change after exact measurements, site conditions, permits, and material choices are confirmed.
+        </p>
+      </section>
+
+      <section class="estq-footer__panel" aria-labelledby="estq-footer-links-title">
+        <div class="estq-footer__label" id="estq-footer-links-title">Quick links</div>
+        <ul class="estq-footer__list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#about">About us</a></li>
+          <li><a href="./index.html#clinox-service-feed">Services</a></li>
+          <li><a href="./index.html#portnew">Recent projects</a></li>
+          <li><a href="./index.html#clinox-testimonial">Customer reviews</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+        </ul>
+      </section>
+
+      <section class="estq-footer__panel estq-footer__panel--contact" aria-labelledby="estq-footer-contact-title">
+        <div class="estq-footer__label" id="estq-footer-contact-title">Contact</div>
+        <ul class="estq-footer__contact-list">
+          <li>
+            <span class="estq-footer__contact-label">Call</span>
+            <a href="tel:9047539267">(904) 753-9267</a>
+          </li>
+          <li>
+            <span class="estq-footer__contact-label">Email</span>
+            <a href="mailto:contact@enclosurespecialist.com">contact@enclosurespecialist.com</a>
+          </li>
+          <li>
+            <span class="estq-footer__contact-label">Based in</span>
+            <span>Jacksonville, Florida</span>
+          </li>
+          <li>
+            <span class="estq-footer__contact-label">Policies</span>
+            <span class="estq-footer__policy-links">
+              <a href="https://docs.google.com/document/d/1ekIY4Hor9cT3sQnKGvP8kdr6kNJCUWl5p1gre2Fr2mM/edit?usp=sharing">Terms</a>
+              <a href="./privacy.html">Privacy</a>
+            </span>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="estq-footer__bottom">
+      <span>Screen Enclosure Specialists LLC</span>
+      <span>Jacksonville, Florida</span>
+    </div>
+  </footer>
+
+  <script>
+    // ----- Replace these with real images (CDN, S3, etc.) -----
+    const BG = {
+      base: "",
+      solid: "./DJI_0024.JPG",
+      screen: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1600&q=60",
+      house: "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&w=1600&q=60",
+      rolldown: "https://images.unsplash.com/photo-1523413239065-05f47b9d0d3b?auto=format&fit=crop&w=1600&q=60",
+      walls1: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1600&q=60",
+      walls2: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=60",
+      walls3: "https://images.unsplash.com/photo-1523413359364-9b7a3d3b9d57?auto=format&fit=crop&w=1600&q=60",
+      walls4: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=60"
+    };
+
+    // Optional per-card image styling (still works without real images)
+    const cardBg = {
+      solid: "radial-gradient(900px 260px at 20% 60%, rgba(125,211,252,.20), transparent)",
+      screen: "radial-gradient(900px 260px at 20% 60%, rgba(52,211,153,.18), transparent)",
+      house: "radial-gradient(900px 260px at 20% 60%, rgba(251,191,36,.14), transparent)",
+      rolldown: "radial-gradient(900px 260px at 20% 60%, rgba(244,114,182,.14), transparent)",
+      w1: "radial-gradient(900px 260px at 20% 60%, rgba(125,211,252,.20), transparent)",
+      w2: "radial-gradient(900px 260px at 20% 60%, rgba(52,211,153,.18), transparent)",
+      w3: "radial-gradient(900px 260px at 20% 60%, rgba(251,191,36,.14), transparent)",
+      w4: "radial-gradient(900px 260px at 20% 60%, rgba(244,114,182,.14), transparent)"
+    };
+
+    // ----- App State -----
+    const state = {
+  // Top level
+  serviceType: null, // "repair" | "install"
+
+  // Repair branch
+  repairType: null, // "hardware" | "screenReplace" | "structural"
+
+  // Hardware branch (informational list only)
+  // (If later you want checkboxes + totals, we can add)
+
+  // Structural branch: no estimate
+
+  // Screen replacement branch
+  mesh: null,        // "1814" | "2020"
+  roofType: null,    // "solid" | "screen"
+  wallCount: null,   // 1..4 | "more"
+  wallsSame: true,
+  wallWidths: [],    // length wallCount, each number (ft)
+  wallHeight: null,  // number (ft)
+  stainless: false,  // boolean
+
+  // Install/New branch (keep your existing enclosure builder if you want)
+  enclosureType: null,   // "solid" | "screen" | "house" | "rolldown"
+  screenWalls: null,
+  dims: {},
+  nearBeach: null,
+  beachOverride: false,
+  rolldownCount: null,
+  openingsSame: true,
+
+  // Internal helper
+  limitContact: false // used when >4 walls etc.
+};
+
+    // ----- DOM -----
+    const stepEl = document.getElementById("step");
+    const stepTitleEl = document.getElementById("stepTitle");
+    const stepSubtitleEl = document.getElementById("stepSubtitle");
+    const stepBodyEl = document.getElementById("stepBody");
+    const stepIndexEl = document.getElementById("stepIndex");
+    const stepTotalEl = document.getElementById("stepTotal");
+    const barEl = document.getElementById("bar");
+    const backBtn = document.getElementById("backBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const summaryKvEl = document.getElementById("summaryKv");
+    const quoteAmtEl = document.getElementById("quoteAmt");
+
+    // ----- Step flow builder (dynamic based on choices) -----
+   function getFlow() {
+  const flow = [];
+
+  // Step 1: Service type
+  flow.push({
+    id: "service",
+    title: "What kind of service would you like to quote?",
+    subtitle: "Pick one to start the estimate flow.",
+    bg: BG.base,
+    canNext: () => !!state.serviceType,
+    render: renderServiceType
+  });
+
+  // -------------------------
+  // REPAIR BRANCH
+  // -------------------------
+  if (state.serviceType === "repair") {
+    flow.push({
+      id: "repairType",
+      title: "What type of repair do you need?",
+      subtitle: "Choose the category that best matches your project.",
+      bg: BG.base,
+      canNext: () => !!state.repairType,
+      render: renderRepairType
+    });
+
+    // Hardware price list (no calculation yet)
+    if (state.repairType === "hardware") {
+      flow.push({
+        id: "hardwareList",
+        title: "Hardware replacement pricing",
+        subtitle: "Use this as a quick reference. Final pricing depends on site conditions and scope.",
+        bg: BG.base,
+        canNext: () => true,
+        render: renderHardwareList
+      });
+
+      flow.push(doneStep());
+      return flow;
+    }
+
+    // Structural repair: contact only
+    if (state.repairType === "structural") {
+      flow.push({
+        id: "structuralContact",
+        title: "Structural repair",
+        subtitle: "We’ll need to see it to estimate it accurately.",
+        bg: BG.base,
+        canNext: () => true,
+        render: renderStructuralContact
+      });
+
+      flow.push(doneStep());
+      return flow;
+    }
+
+    // Screen replacement estimate flow
+    if (state.repairType === "screenReplace") {
+      flow.push({
+        id: "mesh",
+        title: "What screen type would you like?",
+        subtitle: "We’ll keep it simple for this online estimate.",
+        bg: BG.base,
+        canNext: () => !!state.mesh,
+        render: renderMesh
+      });
+
+      flow.push({
+        id: "roofType",
+        title: "What kind of roof does your enclosure have?",
+        subtitle: "This changes how we estimate the roof area.",
+        bg: BG.base,
+        canNext: () => !!state.roofType,
+        render: renderRoofType
+      });
+
+      flow.push({
+        id: "wallCount",
+        title: "How many walls does your enclosure have?",
+        subtitle: "Choose up to 4. If it’s more than 4, we’ll send you to contact us.",
+        bg: BG.base,
+        canNext: () => state.wallCount !== null,
+        render: renderWallCount
+      });
+
+      if (state.wallCount === "more") {
+        flow.push({
+          id: "limitContact",
+          title: "We need a quick look to quote this",
+          subtitle: "Due to limitations of this online estimator, we can’t calculate enclosures with more than 4 walls.",
+          bg: BG.base,
+          canNext: () => true,
+          render: renderLimitContact
+        });
+        flow.push(doneStep());
+        return flow;
+      }
+
+      // Measurements only if 1..4
+      if (Number.isInteger(state.wallCount)) {
+        flow.push({
+          id: "measurements",
+          title: "Wall measurements",
+          subtitle: "Enter wall widths and wall height in feet. Values are rounded up to the next whole foot for estimating.",
+          bg: BG.base,
+          canNext: () => validateScreenReplaceMeasurements().ok,
+          render: renderScreenReplaceMeasurements
+        });
+
+        flow.push({
+          id: "stainless",
+          title: "Fasteners upgrade",
+          subtitle: "Would you like to replace tapcons/fasteners with stainless steel?",
+          bg: BG.base,
+          canNext: () => true,
+          render: renderStainless
+        });
+      }
+
+      flow.push(doneStep());
+      return flow;
+    }
+  }
+
+  // -------------------------
+  // INSTALL/REPLACEMENT & NEW BUILD BRANCH
+  // Keep your existing enclosure builder under this option
+  // -------------------------
+  if (state.serviceType === "install") {
+    // You can keep your old first step, but rename it if you want.
+    flow.push({
+      id: "type",
+      title: "What kind of enclosure are you looking for?",
+      subtitle: "Pick one. Each option shows a quick description and uses a matching background image.",
+      bg: BG.base,
+      canNext: () => !!state.enclosureType,
+      render: renderType // your existing renderType()
+    });
+
+    // Keep the rest of your existing install flow unchanged:
+    if (["solid","screen","house"].includes(state.enclosureType)) {
+      flow.push({
+        id: "walls",
+        title: "How many screen walls will your enclosure have?",
+        subtitle: "Select 1 to 4.",
+        bg: bgForWalls(),
+        canNext: () => Number.isInteger(state.screenWalls),
+        render: renderWalls
+      });
+
+      flow.push({
+        id: "size",
+        title: "What is the approximate size of your enclosure?",
+        subtitle: "Enter rough dimensions in feet.",
+        bg: bgForWalls(),
+        canNext: () => validateDimsForWalls().ok,
+        render: renderDimsForWalls
+      });
+    }
+
+    if (state.enclosureType === "rolldown") {
+      flow.push({
+        id: "beach",
+        title: "Rolldown system: location check",
+        subtitle: "We need to know if you’re near the beach or in areas prone to extreme wind conditions.",
+        bg: BG.rolldown,
+        canNext: () => (state.nearBeach === false) || (state.nearBeach === true && state.beachOverride === true),
+        render: renderBeach
+      });
+
+      flow.push({
+        id: "rdCount",
+        title: "How many rolldown systems will you need?",
+        subtitle: "Select 1 to 6.",
+        bg: BG.rolldown,
+        canNext: () => Number.isInteger(state.rolldownCount),
+        render: renderRolldownCount
+      });
+
+      flow.push({
+        id: "openings",
+        title: "What is the approximate size of your openings?",
+        subtitle: "Enter Height & Width in inches.",
+        bg: BG.rolldown,
+        canNext: () => validateOpenings().ok,
+        render: renderOpenings
+      });
+    }
+
+    flow.push(doneStep());
+    return flow;
+  }
+
+  // Fallback end
+  flow.push(doneStep());
+  return flow;
+}
+
+function doneStep(){
+  return {
+    id: "done",
+    title: "Review",
+    subtitle: "Review your inputs. The estimate on the right updates as you go.",
+    bg: finalBg(),
+    canNext: () => true,
+    render: renderDone
+  };
+}
+
+    function finalBg(){
+      if (state.enclosureType === "solid") return BG.solid;
+      if (state.enclosureType === "screen") return BG.screen;
+      if (state.enclosureType === "house") return BG.house;
+      if (state.enclosureType === "rolldown") return BG.rolldown;
+      return BG.base;
+    }
+
+    function bgForWalls(){
+      const n = state.screenWalls;
+      if (n === 1) return BG.walls1;
+      if (n === 2) return BG.walls2;
+      if (n === 3) return BG.walls3;
+      if (n === 4) return BG.walls4;
+      return (state.enclosureType === "solid" ? BG.solid :
+              state.enclosureType === "screen" ? BG.screen :
+              state.enclosureType === "house" ? BG.house : BG.base);
+    }
+
+    // ----- Navigation -----
+    let stepIndex = 0;
+
+    function currentFlow(){
+      return getFlow();
+    }
+
+    function syncNav() {
+      const flow = currentFlow();
+      const total = flow.length;
+      stepIndex = Math.max(0, Math.min(stepIndex, total - 1));
+
+      stepTotalEl.textContent = String(total);
+stepIndexEl.textContent = String(stepIndex + 1);
+
+const pct = (stepIndex / (total - 1)) * 100;
+barEl.style.width = `${pct}%`;
+
+backBtn.disabled = stepIndex === 0;
+backBtn.style.opacity = backBtn.disabled ? .55 : 1;
+
+      const step = flow[stepIndex];
+      nextBtn.textContent = step.id === "done" ? "Finish" : "Next";
+      nextBtn.disabled = !step.canNext();
+      nextBtn.style.opacity = nextBtn.disabled ? .55 : 1;
+
+      stepTitleEl.textContent = step.title;
+      stepSubtitleEl.textContent = step.subtitle;
+
+      // Apply background image
+      const bgUrl = step.bg || BG.base;
+      stepEl.style.backgroundImage =
+        `linear-gradient(180deg, var(--imgDim) 0%, var(--imgDim2) 72%),
+         var(--stepBg, radial-gradient(900px 600px at 40% 10%, rgba(125,211,252,.18), transparent)),
+         url("${bgUrl}")`;
+
+      // Render
+      stepBodyEl.classList.remove("fadeIn");
+      void stepBodyEl.offsetWidth; // restart animation
+      stepBodyEl.classList.add("fadeIn");
+      step.render();
+
+      // Update summary + quote
+      renderSummary();
+      quoteAmtEl.textContent = computeQuote();
+    }
+
+    function next() {
+      const flow = currentFlow();
+      const step = flow[stepIndex];
+      if (!step.canNext()) return;
+      if (stepIndex < flow.length - 1) stepIndex++;
+      syncNav();
+    }
+
+    function back() {
+      if (stepIndex > 0) stepIndex--;
+      syncNav();
+    }
+
+    function resetAll(){
+      state.enclosureType = null;
+      state.screenWalls = null;
+      state.dims = {};
+      state.nearBeach = null;
+      state.beachOverride = false;
+      state.rolldownCount = null;
+      state.openingsSame = true;
+      stepIndex = 0;
+      syncNav();
+    }
+
+    backBtn.addEventListener("click", back);
+    nextBtn.addEventListener("click", next);
+    resetBtn.addEventListener("click", resetAll);
+
+    // Enable enter key to go next when possible (except inside text inputs)
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter") return;
+      const active = document.activeElement;
+      if (active && (active.tagName === "INPUT" || active.tagName === "TEXTAREA")) return;
+      next();
+    });
+
+    // ----- Step renders -----
+    function renderType() {
+      stepBodyEl.innerHTML = `
+        <div class="grid">
+            
+          ${choiceCard({
+            key: "solid",
+            label: "Solid Roof Enclosure",
+            desc: "Insulated or solid roof system. Best for shade and rain protection.",
+            bg: cardBg.solid,
+            thumb: "./DJI_0024.JPG"
+          })}
+          ${choiceCard({
+            key: "screen",
+            label: "Screen Roof Enclosure",
+            desc: "Screen roof system. Lighter feel with filtered sun and airflow.",
+            bg: cardBg.screen,
+            thumb: "./DJI_0024.JPG"
+          })}
+          ${choiceCard({
+            key: "house",
+            label: "Existing House Roof",
+            desc: "Tie-in under your existing roof line. Layout differs later.",
+            bg: cardBg.house,
+            thumb: "/img/thumbs/existing-roof-640.webp"
+          })}
+          ${choiceCard({
+            key: "rolldown",
+            label: "Electronic Rolldown System",
+            desc: "Motorized screens for openings. Uses separate questions and sizing.",
+            bg: cardBg.rolldown,
+            thumb: "/img/thumbs/rolldown-roof-640.webp"
+          })}
+        </div>
+      `;
+
+      wireChoiceGroup("enclosureType", ["solid","screen","house","rolldown"], (val) => {
+        // changing type invalidates downstream choices
+        if (state.enclosureType !== val) {
+          state.enclosureType = val;
+          state.screenWalls = null;
+          state.dims = {};
+          state.nearBeach = null;
+          state.beachOverride = false;
+          state.rolldownCount = null;
+          state.openingsSame = true;
+          // If user was deep in flow, bring them forward safely
+          stepIndex = Math.min(stepIndex, 0);
+        }
+        syncNav();
+      });
+    }
+function renderServiceType(){
+  stepBodyEl.innerHTML = `
+    <div class="grid">
+      ${choiceCard({
+        key:"repair",
+        label:"Repair & Replacement",
+        desc:"Hardware replacement, screen replacement, and structural repairs.",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)"
+      })}
+      ${choiceCard({
+        key:"install",
+        label:"New Install / Rebuild",
+        desc:"New enclosures, replacements, rebuilds, and full construction quotes.",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(16,185,129,.14), transparent)"
+      })}
+    </div>
+  `;
+
+  wireChoiceGroup("serviceType", ["repair","install"], (val)=>{
+    if (state.serviceType !== val){
+      resetRepairBranch();
+      resetInstallBranch();
+      state.serviceType = val;
+      stepIndex = 0;
+    }
+    syncNav();
+  });
+}
+
+function renderRepairType(){
+  stepBodyEl.innerHTML = `
+    <div class="grid">
+      ${choiceCard({
+        key:"hardware",
+        label:"Hardware replacement",
+        desc:"Doors, door kits, bug sweeps, cables, and related hardware items.",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)"
+      })}
+      ${choiceCard({
+        key:"screenReplace",
+        label:"Screen replacement",
+        desc:"Rescreening estimate based on mesh type, roof type, wall count, and measurements.",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(16,185,129,.14), transparent)"
+      })}
+      ${choiceCard({
+        key:"structural",
+        label:"Structural repair",
+        desc:"Bent frames, major structural damage, sagging beams, rebuild-type repairs.",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(245,158,11,.14), transparent)"
+      })}
+    </div>
+  `;
+
+  wireChoiceGroup("repairType", ["hardware","screenReplace","structural"], (val)=>{
+    if (state.repairType !== val){
+      resetRepairBranch();
+      state.repairType = val;
+      // keep serviceType
+    }
+    syncNav();
+  });
+}
+
+function renderHardwareList(){
+  stepBodyEl.innerHTML = `
+    <div class="fields">
+      <div class="card" style="margin-top:0;">
+        <div style="font-weight:800; font-size:16px;">Price list</div>
+        <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.55;">
+          <div><strong>Service call fee — $100</strong> <span style="color:var(--muted2);">(charged once per visit; waived when the selected repair total exceeds $350)</span></div>
+          <hr style="border:0; border-top:1px solid var(--border); margin:10px 0;">
+          <div>Door kit — <strong>$75</strong></div>
+          <div>Bug sweep — <strong>$25</strong></div>
+          <div>Door kick plate replacement — <strong>$80</strong></div>
+          <div>Cable replacement — <strong>$100</strong></div>
+          <div>Cable adjustment — <strong>$15</strong></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:0;">
+        <div style="font-weight:800; font-size:16px;">Need help fast?</div>
+        <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.45;">
+          For an exact quote (including parts compatibility and labor), use the contact form or call.
+        </div>
+        <div style="margin-top:12px;">
+          <a class="primary" href="#clinox-booking-form" style="display:inline-block; text-decoration:none; padding:11px 14px; border-radius:12px;">Contact us</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderStructuralContact(){
+  stepBodyEl.innerHTML = `
+    <div class="fields">
+      <div class="card" style="margin-top:0;">
+        <div style="font-weight:800; font-size:16px;">Structural repairs require a site review</div>
+        <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.55;">
+          Structural repairs vary widely in scope and complexity, so we can’t provide a meaningful estimate online without seeing the enclosure.
+          Please reach out and we’ll take a look and give you a clear quote.
+        </div>
+        <div style="margin-top:12px;">
+          <a class="primary" href="#clinox-booking-form" style="display:inline-block; text-decoration:none; padding:11px 14px; border-radius:12px;">Contact us</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderLimitContact(){
+  stepBodyEl.innerHTML = `
+    <div class="fields">
+      <div class="card" style="margin-top:0;">
+        <div style="font-weight:800; font-size:16px;">We can’t calculate this layout online</div>
+        <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.55;">
+          Due to limitations of this estimator, we can’t calculate a quote for enclosures with more than 4 walls.
+          Please reach out and we’ll get you a proper estimate.
+        </div>
+        <div style="margin-top:12px;">
+          <a class="primary" href="#clinox-booking-form" style="display:inline-block; text-decoration:none; padding:11px 14px; border-radius:12px;">Contact us</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderMesh(){
+  stepBodyEl.innerHTML = `
+    <div class="grid">
+      ${choiceCard({
+        key:"1814",
+        label:"18/14 Screen",
+        desc:"Standard mesh that protects against common bugs.",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)"
+      })}
+      ${choiceCard({
+        key:"2020",
+        label:"20/20 No-See-Um",
+        desc:"Smaller mesh to help block no-see-um bugs.",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(16,185,129,.14), transparent)"
+      })}
+    </div>
+  `;
+  wireChoiceGroup("mesh", ["1814","2020"], (val)=>{ state.mesh = val; syncNav(); });
+}
+
+function renderRoofType(){
+  stepBodyEl.innerHTML = `
+    <div class="grid">
+      ${choiceCard({
+        key:"screen",
+        label:"Screen roof",
+        desc:"We estimate roof area based on wall widths.",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(16,185,129,.14), transparent)"
+      })}
+      ${choiceCard({
+        key:"solid",
+        label:"Solid roof",
+        desc:"Walls only (roof not screened).",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)"
+      })}
+    </div>
+  `;
+  wireChoiceGroup("roofType", ["screen","solid"], (val)=>{ state.roofType = val; syncNav(); });
+}
+
+function renderWallCount(){
+  stepBodyEl.innerHTML = `
+    <div class="grid">
+      ${choiceCard({ key:"1", label:"1", desc:"One wall", bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)" })}
+      ${choiceCard({ key:"2", label:"2", desc:"Two walls", bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)" })}
+      ${choiceCard({ key:"3", label:"3", desc:"Three walls", bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)" })}
+      ${choiceCard({ key:"4", label:"4", desc:"Four walls", bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)" })}
+      ${choiceCard({ key:"more", label:"More than 4", desc:"We’ll need to quote this manually.", bg:"radial-gradient(900px 260px at 20% 60%, rgba(245,158,11,.14), transparent)" })}
+    </div>
+  `;
+
+  wireChoiceGroup("wallCount", ["1","2","3","4","more"], (val)=>{
+    if (val === "more"){
+      state.wallCount = "more";
+      syncNav();
+      return;
+    }
+    const n = parseInt(val, 10);
+    state.wallCount = n;
+    // resize widths to match count
+    state.wallWidths = Array.from({length:n}, (_,i)=> state.wallWidths[i] ?? "");
+    syncNav();
+  });
+}
+
+function renderScreenReplaceMeasurements(){
+  const n = state.wallCount;
+  const widths = state.wallWidths ?? [];
+  const height = state.wallHeight ?? "";
+
+  stepBodyEl.innerHTML = `
+    <div class="toggleRow" style="background:#fff;">
+      <input id="wallsSame" type="checkbox" ${state.wallsSame ? "checked" : ""} />
+      <div>
+        <div style="font-weight:650;">All wall widths are the same</div>
+        <div style="font-size:12px; color:var(--muted);">If checked, enter one width used for all walls.</div>
+      </div>
+    </div>
+
+    <div class="fields" style="margin-top:12px;">
+      <div class="fieldRow">
+        <div>
+          <label for="wallHeight">Wall height (ft)</label>
+          <input id="wallHeight" type="number" min="0" step="0.5" placeholder="e.g. 11" />
+        </div>
+        <div></div>
+      </div>
+
+      <div id="widthFields" class="fields"></div>
+    </div>
+
+    <div class="mini">We round measurements up to the next whole foot for estimating.</div>
+  `;
+
+  const sameCb = document.getElementById("wallsSame");
+  sameCb.addEventListener("change", ()=>{
+    state.wallsSame = sameCb.checked;
+    syncNav();
+  });
+
+  const heightEl = document.getElementById("wallHeight");
+  heightEl.value = height;
+  heightEl.addEventListener("input", ()=>{
+    const v = heightEl.value.trim();
+    state.wallHeight = v === "" ? "" : Number(v);
+    syncNav();
+  });
+
+  const host = document.getElementById("widthFields");
+
+  if (state.wallsSame){
+    host.innerHTML = `
+      <div class="fieldRow">
+        <div>
+          <label for="w_all">Wall width (ft)</label>
+          <input id="w_all" type="number" min="0" step="0.5" placeholder="e.g. 10" />
+        </div>
+        <div></div>
+      </div>
+    `;
+    const wAll = document.getElementById("w_all");
+    wAll.value = widths[0] ?? "";
+    wAll.addEventListener("input", ()=>{
+      const v = wAll.value.trim();
+      const num = v === "" ? "" : Number(v);
+      state.wallWidths = Array.from({length:n}, ()=> num);
+      syncNav();
+    });
+  } else {
+    host.innerHTML = Array.from({length:n}, (_,i)=>`
+      <div class="fieldRow">
+        <div>
+          <label for="w_${i}">Wall ${i+1} width (ft)</label>
+          <input id="w_${i}" type="number" min="0" step="0.5" placeholder="e.g. 10" />
+        </div>
+        <div></div>
+      </div>
+    `).join("");
+
+    for (let i=0;i<n;i++){
+      const el = document.getElementById(`w_${i}`);
+      el.value = widths[i] ?? "";
+      el.addEventListener("input", ()=>{
+        const v = el.value.trim();
+        const num = v === "" ? "" : Number(v);
+        const next = [...(state.wallWidths ?? [])];
+        next[i] = num;
+        state.wallWidths = next;
+        syncNav();
+      });
+    }
+  }
+
+  const val = validateScreenReplaceMeasurements();
+  if (!val.ok){
+    const hint = document.createElement("div");
+    hint.className = "alert";
+    hint.style.marginTop = "12px";
+    hint.style.background = "rgba(239,68,68,.08)";
+    hint.style.borderColor = "rgba(239,68,68,.25)";
+    hint.style.color = "var(--text)";
+    hint.innerHTML = `<div><strong>Missing / invalid:</strong></div><div class="small" style="color:var(--muted)">${val.msg}</div>`;
+    stepBodyEl.appendChild(hint);
+  }
+}
+
+function renderStainless(){
+  stepBodyEl.innerHTML = `
+    <div class="grid">
+      ${choiceCard({
+        key:"no",
+        label:"No",
+        desc:"Standard fasteners.",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(100,116,139,.14), transparent)"
+      })}
+      ${choiceCard({
+        key:"yes",
+        label:"Yes",
+        desc:"Replace tapcons/fasteners with stainless steel (estimate multiplier).",
+        bg:"radial-gradient(900px 260px at 20% 60%, rgba(245,158,11,.14), transparent)"
+      })}
+    </div>
+  `;
+  wireChoiceGroup("_stainless", ["no","yes"], (val)=>{
+    state.stainless = (val === "yes");
+    syncNav();
+  }, ()=> state.stainless ? "yes" : "no");
+}
+
+function validateScreenReplaceMeasurements(){
+  const n = state.wallCount;
+  if (!Number.isInteger(n) || n < 1 || n > 4) return {ok:false, msg:"Select wall count (1–4)."};
+  const h = state.wallHeight;
+  if (!(typeof h === "number") || !isFinite(h) || h <= 0) return {ok:false, msg:"Wall height"};
+
+  const ws = state.wallWidths ?? [];
+  for (let i=0;i<n;i++){
+    const w = ws[i];
+    if (!(typeof w === "number") || !isFinite(w) || w <= 0) return {ok:false, msg:`Wall ${i+1} width`};
+  }
+  return {ok:true, msg:""};
+}
+
+function resetRepairBranch(){
+  state.repairType = null;
+  state.mesh = null;
+  state.roofType = null;
+  state.wallCount = null;
+  state.wallsSame = true;
+  state.wallWidths = [];
+  state.wallHeight = null;
+  state.stainless = false;
+  state.limitContact = false;
+}
+
+function resetInstallBranch(){
+  state.enclosureType = null;
+  state.screenWalls = null;
+  state.dims = {};
+  state.nearBeach = null;
+  state.beachOverride = false;
+  state.rolldownCount = null;
+  state.openingsSame = true;
+}
+    function renderWalls() {
+      stepBodyEl.innerHTML = `
+        <div class="grid">
+          ${choiceCard({ key: "1", label: "1 Wall", desc: "One screen wall (front).", bg: cardBg.w1 })}
+          ${choiceCard({ key: "2", label: "2 Walls", desc: "Front + one side wall.", bg: cardBg.w2 })}
+          ${choiceCard({ key: "3", label: "3 Walls", desc: "Front + two side walls.", bg: cardBg.w3 })}
+          ${choiceCard({ key: "4", label: "4 Walls", desc: "Front + two sides + back wall.", bg: cardBg.w4 })}
+        </div>
+      `;
+
+      wireChoiceGroup("screenWalls", ["1","2","3","4"], (val) => {
+        const n = parseInt(val, 10);
+        if (state.screenWalls !== n) {
+          state.screenWalls = n;
+          // Clear dims because field set changes
+          state.dims = {};
+        }
+        syncNav();
+      });
+    }
+
+    function renderDimsForWalls() {
+      const n = state.screenWalls;
+      const fields = dimsFieldsForWalls(n);
+
+      stepBodyEl.innerHTML = `
+        <div class="fields">
+          ${fields.map(f => numberField(f.key, f.label, f.placeholder)).join("")}
+        </div>
+        <div class="mini">Units: feet. Example: 20.5</div>
+      `;
+
+      // Wire inputs
+      fields.forEach(f => {
+        const el = document.getElementById(f.key);
+        el.value = (state.dims[f.key] ?? "");
+        el.addEventListener("input", () => {
+          const v = el.value.trim();
+          state.dims[f.key] = v === "" ? "" : Number(v);
+          syncNav();
+        });
+      });
+
+      // Show validation hint if needed
+      const val = validateDimsForWalls();
+      if (!val.ok) {
+        const hint = document.createElement("div");
+        hint.className = "alert";
+        hint.innerHTML = `<div><strong style="color:var(--danger)">Missing / invalid:</strong></div>
+                          <div class="small">${val.msg}</div>`;
+        stepBodyEl.appendChild(hint);
+      }
+    }
+
+    function renderBeach() {
+      const showBlock = (state.nearBeach === true && !state.beachOverride);
+
+      stepBodyEl.innerHTML = `
+        <div class="grid">
+          ${choiceCard({
+            key: "no",
+            label: "No",
+            desc: "Not near beach / not extreme-wind area.",
+            bg: "radial-gradient(900px 260px at 20% 60%, rgba(52,211,153,.18), transparent)"
+          })}
+          ${choiceCard({
+            key: "yes",
+            label: "Yes",
+            desc: "Near beach or extreme-wind conditions.",
+            bg: "radial-gradient(900px 260px at 20% 60%, rgba(251,113,133,.18), transparent)"
+          })}
+        </div>
+
+        <div id="beachBlock" class="${showBlock ? "" : "hidden"}" style="margin-top:12px;">
+          <div class="alert">
+            <div><strong style="color:var(--danger)">Rolldown systems in extreme wind areas</strong></div>
+            <div class="small">
+              We typically do not install rolldown systems in extreme weather conditions areas.
+              If you still want a budgetary quote, you can continue.
+            </div>
+            <div>
+              <button id="continueAnyway" class="danger" type="button">Continue Anyway</button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      wireChoiceGroup("_beach", ["no","yes"], (val) => {
+        const near = (val === "yes");
+        state.nearBeach = near;
+        // if they switch to "no", clear override
+        if (!near) state.beachOverride = false;
+        syncNav();
+      }, () => (state.nearBeach === true ? "yes" : state.nearBeach === false ? "no" : null));
+
+      const btn = document.getElementById("continueAnyway");
+      if (btn) {
+        btn.addEventListener("click", () => {
+          state.beachOverride = true;
+          syncNav();
+        });
+      }
+    }
+
+    function renderRolldownCount() {
+      const opts = [1,2,3,4,5,6].map(n => choiceCard({
+        key: String(n),
+        label: String(n),
+        desc: n === 1 ? "One opening." : `${n} openings.`,
+        bg: "radial-gradient(900px 260px at 20% 60%, rgba(125,211,252,.18), transparent)"
+      })).join("");
+
+      stepBodyEl.innerHTML = `<div class="grid">${opts}</div>`;
+
+      wireChoiceGroup("rolldownCount", ["1","2","3","4","5","6"], (val) => {
+        const n = parseInt(val, 10);
+        if (state.rolldownCount !== n) {
+          state.rolldownCount = n;
+          // Reset openings if count changes
+          state.dims = {};
+        }
+        syncNav();
+      });
+    }
+
+    function renderOpenings() {
+      const count = state.rolldownCount || 0;
+
+      stepBodyEl.innerHTML = `
+        <div class="toggleRow">
+          <input id="sameOpenings" type="checkbox" ${state.openingsSame ? "checked" : ""} />
+          <div>
+            <div style="font-weight:650;">All openings roughly the same</div>
+            <div style="font-size:12px; color:var(--muted);">If checked, enter one Height & Width used for all.</div>
+          </div>
+        </div>
+
+        <div id="openingsFields" class="fields" style="margin-top:12px;"></div>
+      `;
+
+      const sameCb = document.getElementById("sameOpenings");
+      sameCb.addEventListener("change", () => {
+        state.openingsSame = sameCb.checked;
+        // Keep existing values but re-render to match layout
+        syncNav();
+      });
+
+      const host = document.getElementById("openingsFields");
+
+      const makePair = (prefix, title) => {
+        const hKey = `${prefix}_h`;
+        const wKey = `${prefix}_w`;
+        return `
+          <div class="card" style="margin-top:0;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px;">
+              <div style="font-weight:750;">${title}</div>
+              <div style="font-size:12px; color:var(--muted2);">inches</div>
+            </div>
+            <div class="fieldRow" style="margin-top:10px;">
+              <div>
+                <label for="${hKey}">Height</label>
+                <input id="${hKey}" type="number" inputmode="decimal" min="0" step="0.5" placeholder="e.g. 96" />
+              </div>
+              <div>
+                <label for="${wKey}">Width</label>
+                <input id="${wKey}" type="number" inputmode="decimal" min="0" step="0.5" placeholder="e.g. 120" />
+              </div>
+            </div>
+          </div>
+        `;
+      };
+
+      if (state.openingsSame) {
+        host.innerHTML = makePair("all", "All openings");
+        wireOpeningInputs(["all_h","all_w"]);
+      } else {
+        host.innerHTML = Array.from({length: count}, (_, i) => makePair(`o${i+1}`, `Opening ${i+1}`)).join("");
+        const keys = [];
+        for (let i = 1; i <= count; i++) keys.push(`o${i}_h`, `o${i}_w`);
+        wireOpeningInputs(keys);
+      }
+
+      const val = validateOpenings();
+      if (!val.ok) {
+        const hint = document.createElement("div");
+        hint.className = "alert";
+        hint.style.marginTop = "12px";
+        hint.innerHTML = `<div><strong style="color:var(--danger)">Missing / invalid:</strong></div>
+                          <div class="small">${val.msg}</div>`;
+        stepBodyEl.appendChild(hint);
+      }
+    }
+
+    function renderDone() {
+      const lines = buildSummaryLines();
+      stepBodyEl.innerHTML = `
+        <div class="fields">
+          <div class="card" style="margin-top:0;">
+            <div style="font-weight:800; font-size:16px;">Your inputs</div>
+            <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.45;">
+              ${lines.map(x => `<div>• ${escapeHtml(x)}</div>`).join("") || "<div>—</div>"}
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:0;">
+            <div style="font-weight:800; font-size:16px;">Next</div>
+            <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.45;">
+              Add your later questions here (doors, kickplates, upgrades, permits, tear-down, etc.) and compute a real quote.
+              This template already supports branching flows + dynamic fields.
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ----- Helpers: cards, fields, wiring -----
+function choiceCard({key,label,desc,thumb,bg}){
+  return `
+    <button class="choice" type="button" data-choice="${key}" aria-pressed="false"
+            style="--cardBg:${bg}; --thumb: url('${thumb || ""}')">
+      <div class="img"></div>
+      <div class="body">
+        <div class="label">${label}</div>
+        <div class="desc">${desc}</div>
+      </div>
+    </button>
+  `;
+}
+
+
+    function numberField(id, label, placeholder){
+      return `
+        <div>
+          <label for="${id}">${label}</label>
+          <input id="${id}" type="number" inputmode="decimal" min="0" step="0.5" placeholder="${placeholder}" />
+        </div>
+      `;
+    }
+
+    function wireChoiceGroup(stateKey, keys, onPick, getCurrent = null){
+      const buttons = Array.from(stepBodyEl.querySelectorAll("[data-choice]"));
+      const current = getCurrent ? getCurrent() : state[stateKey];
+
+      buttons.forEach(btn => {
+        const k = btn.getAttribute("data-choice");
+        const pressed = (String(current) === String(k));
+        btn.setAttribute("aria-pressed", pressed ? "true" : "false");
+
+        btn.addEventListener("click", () => {
+          // de-press all then press selected
+          buttons.forEach(b => b.setAttribute("aria-pressed","false"));
+          btn.setAttribute("aria-pressed","true");
+          onPick(k);
+        });
+      });
+    }
+
+    function wireOpeningInputs(keys){
+      keys.forEach(k => {
+        const el = document.getElementById(k);
+        if (!el) return;
+        el.value = (state.dims[k] ?? "");
+        el.addEventListener("input", () => {
+          const v = el.value.trim();
+          state.dims[k] = v === "" ? "" : Number(v);
+          syncNav();
+        });
+      });
+    }
+
+    function dimsFieldsForWalls(n){
+      // You described the exact fields; mapping:
+      // 1 wall: width + projection
+      // 2 walls: front + side
+      // 3 walls: front + side1 + side2
+      // 4 walls: front + side1 + side2 + back
+      if (n === 1) return [
+        { key:"width", label:"Width", placeholder:"e.g. 20" },
+        { key:"projection", label:"Projection (house to front wall)", placeholder:"e.g. 14" }
+      ];
+      if (n === 2) return [
+        { key:"front", label:"Front wall length", placeholder:"e.g. 20" },
+        { key:"side1", label:"Side wall length", placeholder:"e.g. 14" }
+      ];
+      if (n === 3) return [
+        { key:"front", label:"Front wall length", placeholder:"e.g. 20" },
+        { key:"side1", label:"Side wall 1 length", placeholder:"e.g. 14" },
+        { key:"side2", label:"Side wall 2 length", placeholder:"e.g. 14" }
+      ];
+      if (n === 4) return [
+        { key:"front", label:"Front wall length", placeholder:"e.g. 20" },
+        { key:"side1", label:"Side wall 1 length", placeholder:"e.g. 14" },
+        { key:"side2", label:"Side wall 2 length", placeholder:"e.g. 14" },
+        { key:"back",  label:"Back wall length", placeholder:"e.g. 20" }
+      ];
+      return [];
+    }
+
+    function validateDimsForWalls(){
+      const n = state.screenWalls;
+      const fields = dimsFieldsForWalls(n);
+      if (!fields.length) return {ok:false, msg:"Select wall count first."};
+
+      const missing = [];
+      for (const f of fields){
+        const v = state.dims[f.key];
+        if (!(typeof v === "number") || !isFinite(v) || v <= 0) missing.push(f.label);
+      }
+      return missing.length ? {ok:false, msg: missing.join(", ")} : {ok:true, msg:""};
+    }
+
+    function validateOpenings(){
+      if (!Number.isInteger(state.rolldownCount)) return {ok:false, msg:"Select rolldown quantity first."};
+
+      const need = [];
+      if (state.openingsSame){
+        if (!(typeof state.dims["all_h"] === "number" && state.dims["all_h"] > 0)) need.push("All openings height");
+        if (!(typeof state.dims["all_w"] === "number" && state.dims["all_w"] > 0)) need.push("All openings width");
+      } else {
+        for (let i = 1; i <= state.rolldownCount; i++){
+          const hK = `o${i}_h`, wK = `o${i}_w`;
+          if (!(typeof state.dims[hK] === "number" && state.dims[hK] > 0)) need.push(`Opening ${i} height`);
+          if (!(typeof state.dims[wK] === "number" && state.dims[wK] > 0)) need.push(`Opening ${i} width`);
+        }
+      }
+      return need.length ? {ok:false, msg: need.join(", ")} : {ok:true, msg:""};
+    }
+
+    // ----- Summary + quote stubs -----
+    function renderSummary(){
+      const items = [
+        {k:"Enclosure Type", v: prettyType(state.enclosureType) || "—"},
+      ];
+
+      if (["solid","screen","house"].includes(state.enclosureType)){
+        items.push({k:"Screen Walls", v: state.screenWalls ? String(state.screenWalls) : "—"});
+        const dimLine = dimsLineForWalls();
+        items.push({k:"Approx. Size", v: dimLine || "—"});
+      }
+
+      if (state.enclosureType === "rolldown"){
+        items.push({k:"Near beach / extreme wind", v: state.nearBeach === null ? "—" : (state.nearBeach ? "Yes" : "No")});
+        if (state.nearBeach) items.push({k:"Override to quote", v: state.beachOverride ? "Yes" : "No"});
+        items.push({k:"Rolldown count", v: state.rolldownCount ? String(state.rolldownCount) : "—"});
+        items.push({k:"Openings same size", v: state.openingsSame ? "Yes" : "No"});
+        items.push({k:"Openings", v: openingsLine() || "—"});
+      }
+
+      summaryKvEl.innerHTML = items.map(it => `
+        <div class="kvItem">
+          <div class="k">${escapeHtml(it.k)}</div>
+          <div class="v">${escapeHtml(it.v)}</div>
+        </div>
+      `).join("");
+    }
+
+    function computeQuote(){
+      // Stub: Replace with real pricing. Return a string like "$12,500 – $15,200".
+      // Example placeholder behavior:
+      if (!state.enclosureType) return "$—";
+
+      if (state.enclosureType === "rolldown"){
+        if (!state.rolldownCount) return "$—";
+        // toy math, just to show it changes:
+        const base = 1800 * state.rolldownCount;
+        return moneyRange(base * 0.9, base * 1.15);
+      }
+
+      if (["solid","screen","house"].includes(state.enclosureType)){
+        if (!state.screenWalls) return "$—";
+        const val = validateDimsForWalls();
+        if (!val.ok) return "$—";
+
+        const approxArea = roughAreaForWalls(); // toy estimate
+        const rate = state.enclosureType === "solid" ? 95 : (state.enclosureType === "screen" ? 65 : 75);
+        const base = approxArea * rate;
+        return moneyRange(base * 0.9, base * 1.15);
+      }
+
+      return "$—";
+    }
+
+    function moneyRange(a,b){
+      const fmt = (x) => "$" + Math.round(x).toLocaleString();
+      return `${fmt(a)} – ${fmt(b)}`;
+    }
+
+    function roughAreaForWalls(){
+      // Very rough placeholder:
+      // 1 wall: width * projection
+      // 2+ walls: front * side1 (assume rectangle-ish)
+      const n = state.screenWalls;
+      const d = state.dims;
+      if (n === 1) return (d.width || 0) * (d.projection || 0);
+      if (n >= 2) return (d.front || 0) * (d.side1 || 0);
+      return 0;
+    }
+
+    function dimsLineForWalls(){
+      const n = state.screenWalls;
+      const d = state.dims;
+      if (!n) return "";
+      if (n === 1) return `Width ${d.width || "—"} ft, Projection ${d.projection || "—"} ft`;
+      if (n === 2) return `Front ${d.front || "—"} ft, Side ${d.side1 || "—"} ft`;
+      if (n === 3) return `Front ${d.front || "—"} ft, Side1 ${d.side1 || "—"} ft, Side2 ${d.side2 || "—"} ft`;
+      if (n === 4) return `Front ${d.front || "—"} ft, Side1 ${d.side1 || "—"} ft, Side2 ${d.side2 || "—"} ft, Back ${d.back || "—"} ft`;
+      return "";
+    }
+
+    function openingsLine(){
+      if (!state.rolldownCount) return "";
+      const d = state.dims;
+      if (state.openingsSame){
+        const h = d.all_h, w = d.all_w;
+        if (!h || !w) return "";
+        return `${state.rolldownCount} × (${h}" H × ${w}" W)`;
+      } else {
+        const parts = [];
+        for (let i=1;i<=state.rolldownCount;i++){
+          const h = d[`o${i}_h`], w = d[`o${i}_w`];
+          if (!h || !w) return "";
+          parts.push(`#${i} ${h}"×${w}"`);
+        }
+        return parts.join(", ");
+      }
+    }
+
+    function buildSummaryLines(){
+      const lines = [];
+      if (state.enclosureType) lines.push(`Enclosure type: ${prettyType(state.enclosureType)}`);
+      if (["solid","screen","house"].includes(state.enclosureType)){
+        if (state.screenWalls) lines.push(`Screen walls: ${state.screenWalls}`);
+        const val = validateDimsForWalls();
+        if (val.ok) lines.push(`Approx size: ${dimsLineForWalls()}`);
+      }
+      if (state.enclosureType === "rolldown"){
+        if (state.nearBeach !== null) lines.push(`Near beach/extreme wind: ${state.nearBeach ? "Yes" : "No"}`);
+        if (state.nearBeach) lines.push(`Override to quote: ${state.beachOverride ? "Yes" : "No"}`);
+        if (state.rolldownCount) lines.push(`Rolldown count: ${state.rolldownCount}`);
+        if (state.rolldownCount) lines.push(`Openings: ${openingsLine() || "—"}`);
+      }
+      return lines;
+    }
+
+    function prettyType(t){
+      if (t === "solid") return "Solid Roof Enclosure";
+      if (t === "screen") return "Screen Roof Enclosure";
+      if (t === "house") return "Existing House Roof";
+      if (t === "rolldown") return "Electronic Rolldown System";
+      return "";
+    }
+
+    function escapeHtml(s){
+      return String(s)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    // Keep Next button enabled/disabled as user types
+    const observer = new MutationObserver(() => {
+      const flow = currentFlow();
+      const step = flow[stepIndex];
+      nextBtn.disabled = !step.canNext();
+      nextBtn.style.opacity = nextBtn.disabled ? .55 : 1;
+    });
+    observer.observe(stepBodyEl, {childList:true, subtree:true});
+
+    // Initial paint
+    syncNav();
+  </script>
+  <!-- For Js Library -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="assets/js/appear.js"></script>
+	<script src="assets/js/slick.js"></script>
+	<script src="assets/js/jquery.counterup.min.js"></script>
+	<script src="assets/js/waypoints.min.js"></script>
+	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+	<script src="assets/js/jquery.filterizr.js"></script>
+	<script src="assets/js/backToTop.js"></script>
+	<script src="assets/js/uikit.min.js"></script>
+	<script src="assets/js/metisMenu.min.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+	<script src="assets/js/scripts-2.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/modal.js"></script>
+<script>
+(() => {
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('.lightbox__img');
+  const closeBtn = lb.querySelector('.lightbox__close');
+
+  function openLightbox(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || 'Project photo';
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // Click any project image
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest('.project__item img');
+    if (!img) return;
+
+    // Prefer a higher-res URL if you have one
+    const full = img.dataset.full || img.currentSrc || img.src;
+    openLightbox(full, img.alt);
+  });
+
+  // Close: X, backdrop click, ESC
+  closeBtn.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+})();
+</script>
+<script src='assets/js/estimate-refresh.js?v=20260308-18'></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

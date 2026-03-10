@@ -57,6 +57,36 @@
 	transform: rotate(-45deg) translate(6px, -6px);
 }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-804324130"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-804324130');
+</script>
+<!-- Event snippet for Контакт conversion page -->
+<script>
+	gtag('event', 'conversion', {'send_to': 'AW-804324130/KtueCPiPkMQaEKKGxP8C'});
+  </script>
+  <!-- Event snippet for Контакт conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+	function gtag_report_conversion(url) {
+	  var callback = function () {
+		if (typeof(url) != 'undefined') {
+		  window.location = url;
+		}
+	  };
+	  gtag('event', 'conversion', {
+		  'send_to': 'AW-804324130/KtueCPiPkMQaEKKGxP8C',
+		  'event_callback': callback
+	  });
+	  return false;
+	}
+	</script>
+	
 </head>
 <body>
 
@@ -396,7 +426,7 @@
 						</select>
 					</div>
 					<input type="hidden" name="source" value="Overall Enclosure">
-					<button class="thm-btn" type="submit">
+					<button class="thm-btn" onclick="return gtag_report_conversion()" type="submit"> 
 						<span class="btn-wrap">
 							<span>Request Estimate</span>
 							<span>Request Estimate</span>

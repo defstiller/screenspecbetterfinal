@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Keep internal or non-public paths out of search indexes.
+Disallow: /assets/mail/
+Disallow: /assets/scss/
+Disallow: /old%20index/
+Disallow: /.chrome*
+Disallow: /screenspecbetterfinal.rar
+Disallow: /estimate-*.png$
+Disallow: /branding*.jpg$
+
+# Public pages, blog posts, service pages, and the estimator remain crawlable.
+Sitemap: https://enclosurespecialist.com/sitemap.xml

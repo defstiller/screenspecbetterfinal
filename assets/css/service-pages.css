@@ -1,0 +1,412 @@
+.service-page .home-nav a[aria-current='page'] {
+  color: var(--home-text);
+}
+
+.service-hero {
+  padding: 46px 0 26px;
+}
+
+.service-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: var(--home-muted);
+  font-size: 13px;
+}
+
+.service-breadcrumbs a {
+  text-decoration: none;
+}
+
+.service-breadcrumbs span:last-child {
+  color: var(--home-text);
+  font-weight: 700;
+}
+
+.service-hero__grid,
+.service-detail-grid,
+.service-proof-grid,
+.service-flow-grid,
+.service-related-grid,
+.service-hub-grid,
+.service-faq-grid,
+.service-highlight-grid,
+.service-compare-grid,
+.service-support-grid,
+.service-market-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.service-hero__grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  align-items: start;
+}
+
+.service-hero__copy,
+.service-card,
+.service-panel,
+.service-cta-band,
+.service-faq-card,
+.service-project-card,
+.service-hub-card,
+.service-market-card {
+  min-width: 0;
+  border: 1px solid rgba(16, 23, 33, 0.08);
+  border-radius: var(--home-radius-lg);
+  background: var(--home-panel);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--home-shadow-soft);
+}
+
+.service-hero__copy,
+.service-card,
+.service-panel,
+.service-cta-band,
+.service-faq-card,
+.service-hub-card,
+.service-market-card {
+  padding: 24px;
+}
+
+.service-hero__copy {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.94));
+}
+
+.service-hero__title,
+.service-section__title,
+.service-panel h2,
+.service-card h3,
+.service-cta-band h2,
+.service-faq-card h3,
+.service-hub-card h3,
+.service-market-card h3 {
+  margin: 0;
+  font-family: var(--home-font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--home-text);
+}
+
+.service-hero__title {
+  margin-top: 10px;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.9;
+}
+
+.service-hero__text,
+.service-card p,
+.service-panel p,
+.service-cta-band p,
+.service-faq-card p,
+.service-hub-card p,
+.service-market-card p,
+.service-section__text,
+.service-project-card p,
+.service-note,
+.service-list,
+.service-list li,
+.service-specs li {
+  color: var(--home-muted-strong);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.service-hero__text {
+  max-width: 700px;
+  margin: 16px 0 0;
+}
+
+.service-hero__actions,
+.service-inline-links,
+.service-cta-band__actions,
+.service-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.service-hero__actions {
+  margin-top: 22px;
+}
+
+.service-inline-links {
+  margin-top: 18px;
+}
+
+.service-inline-links a,
+.service-footer-links a,
+.service-card__link,
+.service-panel__link,
+.service-hub-card__link,
+.service-market-card__link {
+  color: var(--home-blue-deep);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.service-highlight-grid,
+.service-support-grid,
+.service-faq-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-compare-grid,
+.service-market-grid,
+.service-related-grid,
+.service-proof-grid,
+.service-flow-grid,
+.service-hub-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-detail-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr);
+}
+
+.service-section {
+  padding: 26px 0;
+}
+
+.service-section__head {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.service-section__title {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 0.95;
+}
+
+.service-card__icon,
+.service-hub-card__icon,
+.service-market-card__icon,
+.service-panel__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  background: rgba(57, 173, 255, 0.12);
+  color: var(--home-blue-deep);
+  font-size: 20px;
+}
+
+.service-card h3,
+.service-hub-card h3,
+.service-market-card h3,
+.service-panel h2 {
+  font-size: 1.45rem;
+  line-height: 1.05;
+}
+
+.service-list,
+.service-specs {
+  margin: 18px 0 0;
+  padding-left: 20px;
+}
+
+.service-list li + li,
+.service-specs li + li {
+  margin-top: 8px;
+}
+
+.service-panel--image {
+  overflow: hidden;
+  padding: 0;
+}
+
+.service-panel--image img,
+.service-project-card img {
+  width: 100%;
+  aspect-ratio: 1 / 0.78;
+  object-fit: cover;
+}
+
+.service-panel--image .service-panel__body,
+.service-project-card__body {
+  padding: 22px;
+}
+
+.service-project-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.service-project-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.service-faq-card h3 {
+  font-size: 1.15rem;
+  line-height: 1.08;
+}
+
+.service-cta-band {
+  display: grid;
+  gap: 18px;
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
+  background: linear-gradient(135deg, rgba(10, 8, 13, 0.96), rgba(15, 28, 48, 0.94));
+  color: #fff;
+}
+
+.service-cta-band h2,
+.service-cta-band p,
+.service-cta-band .home-section__eyebrow {
+  color: #fff;
+}
+
+.service-cta-band .home-section__eyebrow {
+  opacity: 0.75;
+}
+
+.service-cta-band__actions .home-btn--ghost {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.service-hub-card,
+.service-market-card {
+  display: grid;
+  gap: 10px;
+}
+
+.service-hub-card__meta,
+.service-market-card__meta {
+  color: var(--home-muted);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.service-note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: var(--home-radius-sm);
+  background: rgba(57, 173, 255, 0.08);
+}
+
+.service-hero__aside {
+  display: grid;
+  gap: 18px;
+}
+
+.service-spec-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.service-spec-list strong {
+  display: block;
+  font-size: 14px;
+  color: var(--home-text);
+}
+
+.service-spec-list span {
+  color: var(--home-muted-strong);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.service-mini-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.service-mini-card {
+  padding: 16px;
+  border-radius: var(--home-radius-sm);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(16, 23, 33, 0.08);
+}
+
+.service-mini-card strong {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--home-blue-deep);
+}
+
+.service-mini-card span {
+  display: block;
+  margin-top: 8px;
+  color: var(--home-text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.service-anchor-offset {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 1024px) {
+  .service-hero__grid,
+  .service-detail-grid,
+  .service-compare-grid,
+  .service-proof-grid,
+  .service-flow-grid,
+  .service-related-grid,
+  .service-hub-grid,
+  .service-highlight-grid,
+  .service-support-grid,
+  .service-faq-grid,
+  .service-market-grid,
+  .service-mini-grid,
+  .service-cta-band {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-cta-band__actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .service-hero {
+    padding-top: 28px;
+  }
+
+  .service-hero__copy,
+  .service-card,
+  .service-panel,
+  .service-faq-card,
+  .service-hub-card,
+  .service-market-card,
+  .service-cta-band {
+    padding: 20px;
+  }
+
+  .service-hero__title {
+    font-size: clamp(2.25rem, 14vw, 3.6rem);
+  }
+
+  .service-section {
+    padding: 22px 0;
+  }
+
+  .service-hero__actions,
+  .service-inline-links,
+  .service-cta-band__actions,
+  .service-footer-links {
+    flex-direction: column;
+  }
+
+  .service-hero__actions .home-btn,
+  .service-cta-band__actions .home-btn,
+  .service-footer-links .home-btn {
+    width: 100%;
+  }
+}
