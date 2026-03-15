@@ -6,14 +6,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'BrandPoppins';
-  src: url('../fonts/brand/poppins-regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
 :root {
   --home-blue: #39adff;
   --home-blue-deep: #0f7bd6;
@@ -36,7 +28,7 @@
   --home-radius-sm: 16px;
   --home-primary: linear-gradient(135deg, #39adff 0%, #0f7bd6 100%);
   --home-font-display: 'BrandZuume', 'Arial Narrow', Impact, sans-serif;
-  --home-font-body: 'BrandPoppins', 'Poppins', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --home-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -46,6 +38,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body {
@@ -54,6 +48,8 @@ body {
   overflow-x: hidden;
   color: var(--home-text);
   font-family: var(--home-font-body);
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
   background:
     radial-gradient(circle at top left, rgba(57, 173, 255, 0.18), transparent 28%),
     radial-gradient(circle at top right, rgba(15, 123, 214, 0.12), transparent 22%),
@@ -77,7 +73,7 @@ a {
 }
 
 .home-shell {
-  width: min(1240px, calc(100% - 32px));
+  width: min(1280px, calc(100% - 32px));
   margin: 0 auto;
 }
 
@@ -100,14 +96,14 @@ a {
 }
 
 .home-page > main {
-  padding-top: 90px;
+  padding-top: 102px;
 }
 
 .home-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
+  min-height: 58px;
   padding: 0 22px;
   border: 1px solid transparent;
   border-radius: 999px;
@@ -147,7 +143,7 @@ a {
   left: 0;
   right: 0;
   z-index: 120;
-  padding: 10px 0;
+  padding: 14px 0;
   background: rgba(247, 251, 255, 0.82);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(16, 23, 33, 0.06);
@@ -169,7 +165,7 @@ a {
 }
 
 .home-brand img {
-  width: 52px;
+  width: 58px;
   height: 52px;
   object-fit: contain;
   filter: drop-shadow(0 14px 20px rgba(57, 173, 255, 0.18));
@@ -209,7 +205,7 @@ a {
 }
 
 .home-brand__title {
-  font-size: clamp(1.05rem, 1.7vw, 1.42rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
   line-height: 0.95;
 }
 
@@ -393,7 +389,7 @@ a {
 }
 
 .home-hero {
-  padding: 28px 0 42px;
+  padding: 42px 0 42px;
 }
 
 .home-hero__grid,
@@ -405,7 +401,7 @@ a {
 }
 
 .home-hero__grid {
-  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(400px, 0.92fr);
   align-items: start;
 }
 
@@ -452,7 +448,7 @@ a {
 .home-hero__title {
   margin: 0;
   max-width: 12ch;
-  font-size: clamp(3rem, 8vw, 5.8rem);
+  font-size: clamp(3.25rem, 8.6vw, 6.2rem);
   line-height: 0.92;
 }
 
@@ -576,7 +572,7 @@ a {
 
 .home-hero__visual {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.82fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.84fr);
   gap: 16px;
 }
 
@@ -584,7 +580,7 @@ a {
 .home-hero-estimate-card {
   position: relative;
   overflow: hidden;
-  min-height: 250px;
+  min-height: 270px;
   border: 1px solid rgba(16, 23, 33, 0.08);
   border-radius: var(--home-radius-xl);
   box-shadow: var(--home-shadow);
@@ -592,7 +588,7 @@ a {
 
 .home-hero-card--main {
   grid-row: 1 / span 2;
-  min-height: 620px;
+  min-height: 660px;
 }
 
 .home-hero-card img {
@@ -1093,11 +1089,11 @@ a {
   }
 
   .home-page > main {
-    padding-top: 72px;
+    padding-top: calc(92px + env(safe-area-inset-top, 0px));
   }
 
   .home-header {
-    padding: 8px 0;
+    padding: calc(8px + env(safe-area-inset-top, 0px)) 0 8px;
   }
 
   .home-header__inner {
@@ -1123,7 +1119,7 @@ a {
   }
 
   .home-hero {
-    padding: 20px 0 24px;
+    padding: 28px 0 24px;
   }
 
   .home-hero__grid,
@@ -1150,6 +1146,14 @@ a {
 
   .home-hero__title {
     max-width: 100%;
+    font-size: clamp(2.75rem, 15vw, 4.8rem);
+    line-height: 0.94;
+  }
+
+  .home-chip {
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 0.04em;
   }
 
   .home-section,
@@ -1190,6 +1194,16 @@ a {
     width: 100%;
   }
 
+  .home-btn,
+  .home-phone-pill {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .home-phone-pill {
+    justify-content: center;
+  }
+
   .home-proof-card,
   .home-strip__item,
   .home-service-card,
@@ -1224,4 +1238,18 @@ a {
 
 
 
+
+
+
+
+.home-strip__item p a {
+  color: var(--home-blue-deep);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-strip__item p a:hover,
+.home-strip__item p a:focus-visible {
+  text-decoration: underline;
+}
 

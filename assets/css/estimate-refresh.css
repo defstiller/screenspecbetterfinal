@@ -35,7 +35,12 @@
   --estq-radius-md: 22px;
   --estq-radius-sm: 16px;
   --estq-font-display: 'BrandZuume', 'Arial Narrow', Impact, sans-serif;
-  --estq-font-body: 'BrandPoppins', 'Poppins', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --estq-font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {

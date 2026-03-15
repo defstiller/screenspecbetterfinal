@@ -141,7 +141,7 @@
 
             <div class='estq-meta'>
               <div class='estq-pill'>Step <strong id='estqIndex'>1</strong> of <span id='estqTotal'>1</span></div>
-              <div id='estqTime' class='estq-pill estq-pill--quiet'>About 1 minute</div>
+              <div id='estqTime' class='estq-pill estq-pill--quiet'>About 4 minutes</div>
             </div>
           </div>
 
@@ -465,14 +465,66 @@
     stepEl.style.setProperty('--estq-step-image', value);
   }
 
+  function estimateStepSeconds(stepOrId) {
+    const id = typeof stepOrId === 'string' ? stepOrId : (stepOrId.id || '');
+    if (id === 'service') return 20;
+    if (id === 'repairType' || id === 'type' || id === 'walls' || id === 'mesh' || id === 'roofType' || id === 'solidRoofType' || id === 'kickplate' || id === 'baseExisting' || id === 'newBaseType' || id === 'existingFooting' || id === 'footingPermitted' || id === 'beach' || id === 'rdCount' || id === 'stainless') return 25;
+    if (id === 'measurements' || id === 'size' || id === 'openings') return 70;
+    if (id === 'hardwareList' || id === 'structuralContact' || id === 'limitContact' || id === 'permitInfo') return 15;
+    if (id === 'done') return 20;
+    if (id === 'lead') return 50;
+    return 30;
+  }
+
+  function projectedTimingFlowIds() {
+    if (!state.serviceType) return ['service'];
+
+    if (state.serviceType === 'repair') {
+      if (!state.repairType) return ['service', 'repairType', 'mesh', 'roofType', 'wallCount', 'measurements', 'stainless', 'done', 'lead'];
+      if (state.repairType === 'hardware') return ['service', 'repairType', 'hardwareList', 'lead'];
+      if (state.repairType === 'structural') return ['service', 'repairType', 'structuralContact', 'lead'];
+      return ['service', 'repairType', 'mesh', 'roofType', 'wallCount', 'measurements', 'stainless', 'done', 'lead'];
+    }
+
+    if (state.serviceType === 'install') {
+      if (!state.enclosureType) {
+        return ['service', 'type', 'solidRoofType', 'walls', 'size', 'kickplate', 'baseExisting', 'newBaseType', 'existingFooting', 'footingPermitted', 'permitInfo', 'done', 'lead'];
+      }
+
+      if (state.enclosureType === 'rolldown') {
+        return ['service', 'type', 'beach', 'rdCount', 'openings', 'done', 'lead'];
+      }
+
+      if (state.enclosureType === 'house') {
+        return ['service', 'type', 'walls', 'size', 'kickplate', 'done', 'lead'];
+      }
+
+      if (state.enclosureType === 'screen') {
+        return ['service', 'type', 'walls', 'size', 'kickplate', 'baseExisting', 'newBaseType', 'existingFooting', 'footingPermitted', 'permitInfo', 'done', 'lead'];
+      }
+
+      return ['service', 'type', 'solidRoofType', 'walls', 'size', 'kickplate', 'baseExisting', 'newBaseType', 'existingFooting', 'footingPermitted', 'permitInfo', 'done', 'lead'];
+    }
+
+    return ['service'];
+  }
+
   function humanStepHint(index, total, step) {
     if (step.nextAction) return 'Ready to send';
-    if (!state.serviceType) return 'About 1 minute';
-    const remaining = Math.max(0, total - index - 1);
-    if (remaining >= 4) return 'About 1 minute left';
-    if (remaining >= 2) return 'About 30 seconds left';
-    if (remaining === 1) return 'Almost there';
-    return 'Ready';
+    if (!state.serviceType) return 'About 4 minutes';
+
+    const projectedIds = projectedTimingFlowIds();
+    const currentIndex = Math.max(0, projectedIds.indexOf(step.id));
+    const secondsLeft = projectedIds
+      .slice(currentIndex)
+      .reduce((sum, id) => sum + estimateStepSeconds(id), 0);
+
+    if (secondsLeft >= 300) return 'About 4 minutes left';
+    if (secondsLeft >= 210) return 'About 3 minutes left';
+    if (secondsLeft >= 120) return 'About 2 minutes left';
+    if (secondsLeft >= 45) return 'About 1 minute left';
+    if (secondsLeft >= 20) return 'About 30 seconds left';
+    return 'Almost there';
   }
 
   function completionText(index, total, step) {

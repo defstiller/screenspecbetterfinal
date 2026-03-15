@@ -1,0 +1,52 @@
+Screen Enclosure Working Notes
+
+What an enclosure is
+- A screen enclosure is a framed outdoor structure, usually aluminum, built around a pool, patio, lanai, or covered opening.
+- It can be free-standing or tied back into the house / existing roof.
+- Main job: keep bugs out, define the outdoor space, and sometimes add shade, weather coverage, privacy, or wind control.
+
+How it works
+- Structure: aluminum posts, beams, rails, doors, and screen panels.
+- Base: usually slab, pavers, tile over slab, or existing surface. Footing/base conditions affect what can be built.
+- Roof: can be screen, solid/composite/pan roof, mixed roof, or an existing house roof with screen walls under it.
+- Walls: screened sides; the house itself can act as one side instead of a wall.
+- Openings: doors, large spans, or motorized rolldown openings.
+- Stability: tie-downs / cables reduce lateral movement and matter in wind-prone Florida conditions.
+
+Useful project types
+- Rescreen: frame stays, screen is replaced.
+- Repair: targeted fix to frame/hardware/problem areas.
+- Rebuild: old enclosure is too far gone; replace structure cleanly.
+- New enclosure: full new layout around pool/patio/lanai.
+- Existing-roof screen-in: roof already exists; build screen walls/doors below it.
+- Roof-system enclosure: composite or pan roof for more shade / rain coverage.
+- Rolldown system: motorized screen on openings; different from fixed wall pricing.
+
+Screen / material notes
+- 18/14 mesh: standard everyday screen.
+- 20/20 mesh: tighter no-see-um bug protection.
+- PetScreen: more puncture-resistant, good for pets / high-traffic areas, but bug control can be worse than finer mesh.
+- Super Screen: stronger premium screen; useful for larger openings / open-view applications.
+- Aluminum screen: older option; generally less desirable than newer materials for durability.
+- Stainless fasteners/tapcons: preferred replacement hardware when old fasteners are being changed.
+
+Estimate-sheet term notes
+- Screen Enclosure: standard screened structure.
+- Elite Room: your term for a composite roof enclosure.
+- Slab / Pavers / Tile: ground/base finish under enclosure.
+- Additional slab outside enclosure: extra concrete outside main enclosure footprint.
+- Open view: fewer visual obstructions / larger openings for cleaner sightlines.
+- Enclosure color: usually white or bronze aluminum finish.
+- Chair rail: horizontal aluminum rail at lower wall height; can break up panel and support stronger lower screen.
+- Kick plate: solid aluminum lower wall panel for protection from damage, pets, tools, etc.
+- Door QTY and location: how many doors and where they go.
+- Door sizes: common widths shown are 36, 42, 48.
+- Pet screen on chair rail: stronger screen only in the lower impact zone.
+- Screw covers: cosmetic finish pieces to hide/expose fastener lines more cleanly.
+- Hose bib / gutter guards / fan beam / shingles: surrounding conditions or tie-in items that can affect details of the build.
+
+Mental model for quoting / discussing
+- First decide: rescreen, repair, rebuild, or new build.
+- Then decide: free-standing vs existing-roof vs covered-roof / mixed-roof.
+- Then decide: base condition, wall count, door count, mesh/screen type, and add-ons like kick plate or chair rail.
+- For rolldowns: think opening size, number of systems, wind exposure, and whether they are part of a larger roofed enclosure.
