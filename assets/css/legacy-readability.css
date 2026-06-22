@@ -1,0 +1,35 @@
+@media (min-width: 1181px) {
+  body {
+    font-size: 18px;
+    line-height: 1.72;
+  }
+
+  p,
+  li,
+  blockquote,
+  .pera-content p,
+  .blog_details_content p,
+  .tx-blog-details p,
+  .service_details_text p {
+    font-size: 18px;
+    line-height: 1.72;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    font-size: 17px;
+  }
+
+  h5,
+  h6,
+  .section-title span,
+  .blog-meta,
+  .blog-meta a,
+  .post-meta,
+  .post-meta a {
+    font-size: 15px;
+  }
+}

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'BrandZuume';
-  src: url('../fonts/brand/zuume-bold.ttf') format('truetype');
+  src: url('../fonts/brand/zuume-bold.ttf?v=20260319-1') format('truetype');
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -2109,5 +2109,56 @@ body {
 
   .app {
     padding-top: 128px !important;
+  }
+}
+
+@media (min-width: 1181px) {
+  .estq-chip,
+  .estq-eyebrow,
+  .estq-pill,
+  .estimate-page-header__meta,
+  .estimate-page-header__phone-copy small,
+  .estq-summary-card__title,
+  .estq-summary-panel h3,
+  .estq-summary-card__meta,
+  .estq-summary-item__label,
+  .estq-quote__label,
+  .estq-badge,
+  .estq-footer__contact-label {
+    font-size: 14px;
+  }
+
+  .estq-subtitle,
+  .estq-card p,
+  .estq-note,
+  .estq-list li,
+  .estq-price-list li,
+  .estq-quote__note,
+  .estq-summary-item__value,
+  .estq-empty,
+  .estq-summary-panel li,
+  .estq-disclosure summary,
+  .estq-disclosure__body p,
+  .estq-disclosure__list,
+  .estq-footer__body p,
+  .estq-footer__list a,
+  .estq-footer__contact-list a,
+  .estq-footer__contact-list span {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .estq-label,
+  .estq-input,
+  .estq-btn,
+  .estq-summary__cta a,
+  .estimate-page-header__phone-copy strong {
+    font-size: 17px;
+  }
+
+  .estq-card h3,
+  .estq-card strong,
+  .estq-brand__title {
+    font-size: 1.4rem;
   }
 }

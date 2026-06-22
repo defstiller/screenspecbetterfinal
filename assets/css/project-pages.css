@@ -287,3 +287,46 @@
     width: 100%;
   }
 }
+
+@media (min-width: 1181px) {
+  .portfolio-jump-row a,
+  .portfolio-feature-card__meta,
+  .portfolio-gallery-card__meta,
+  .project-photo-card__meta,
+  .project-kicker {
+    font-size: 15px;
+  }
+
+  .portfolio-stat-card span,
+  .project-summary-card span,
+  .project-side-card span,
+  .project-note-card span,
+  .portfolio-gallery-card p,
+  .portfolio-feature-card p,
+  .project-takeaway-card p,
+  .project-checklist,
+  .project-checklist li {
+    font-size: 19px;
+    line-height: 1.72;
+  }
+
+  .portfolio-stat-card strong,
+  .project-summary-card strong,
+  .project-side-card strong,
+  .project-note-card strong,
+  .portfolio-feature-card h3,
+  .portfolio-gallery-card h3,
+  .project-takeaway-card h3,
+  .project-side-card h3,
+  .project-note-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .portfolio-gallery-card__button,
+  .project-photo-card__button,
+  .project-proof-links a,
+  .portfolio-feature-card__actions a,
+  .portfolio-gallery-card__actions a {
+    font-size: 17px;
+  }
+}

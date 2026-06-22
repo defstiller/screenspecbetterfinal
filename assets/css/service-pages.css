@@ -410,3 +410,48 @@
     width: 100%;
   }
 }
+
+@media (min-width: 1181px) {
+  .service-breadcrumbs,
+  .service-hub-card__meta,
+  .service-market-card__meta,
+  .service-spec-list strong,
+  .service-mini-card strong {
+    font-size: 15px;
+  }
+
+  .service-hero__text,
+  .service-card p,
+  .service-panel p,
+  .service-cta-band p,
+  .service-faq-card p,
+  .service-hub-card p,
+  .service-market-card p,
+  .service-section__text,
+  .service-project-card p,
+  .service-note,
+  .service-list,
+  .service-list li,
+  .service-specs li,
+  .service-spec-list span,
+  .service-mini-card span {
+    font-size: 19px;
+    line-height: 1.72;
+  }
+
+  .service-panel h2,
+  .service-card h3,
+  .service-cta-band h2,
+  .service-faq-card h3,
+  .service-hub-card h3,
+  .service-market-card h3,
+  .service-project-card strong {
+    font-size: 1.4rem;
+  }
+
+  .service-inline-links a,
+  .service-footer-links a,
+  .service-card__link {
+    font-size: 17px;
+  }
+}

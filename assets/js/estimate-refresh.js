@@ -32,7 +32,7 @@
   // Update estimator pricing here. Keep rates and minimums in one place.
   const PRICING = {
     repair: {
-      hardwareStart: 100,
+      hardwareStart: 125,
       screen: {
         wallSqFt1814: 1.9,
         wallSqFt2020: 2.1,
@@ -234,6 +234,43 @@
     if (leadIndex === -1) return;
     stepIndex = leadIndex;
     syncNav();
+    scrollEstimatorIntoView();
+  }
+
+  function estimatorScrollOffset() {
+    const header = document.querySelector('.estimate-page-header');
+    const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+    return Math.max(20, Math.ceil(headerBottom + 16));
+  }
+
+  function quoteHasVisibleDetails(quote = quoteState()) {
+    return quote.badge === 'Live'
+      || quote.badge === 'Guide'
+      || quote.badge === 'Manual quote'
+      || quote.badge === 'Review needed';
+  }
+
+  function revealEstimateAfterStepChange() {
+    if (window.matchMedia('(max-width: 760px)').matches && quoteHasVisibleDetails()) {
+      setMobileSummaryOpen(true);
+    }
+    scrollEstimatorIntoView();
+  }
+
+  function scrollEstimatorIntoView() {
+    const isMobile = window.matchMedia('(max-width: 760px)').matches;
+    const isStacked = window.matchMedia('(max-width: 1080px)').matches;
+    const target = isMobile
+      ? (mobileToggleEl || stepEl)
+      : (isStacked ? stepEl : (document.querySelector('.estq-quote') || stepEl));
+    const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        const targetRect = target.getBoundingClientRect();
+        const targetTop = Math.max(0, window.scrollY + targetRect.top - estimatorScrollOffset());
+        window.scrollTo({ top: targetTop, behavior });
+      });
+    });
   }
 
   function getFlow() {
@@ -331,6 +368,12 @@
         return flow;
       }
 
+      if (state.enclosureType === 'glass') {
+        flow.push({ id: 'glassInfo', title: 'Glass enclosures need a manual quote', subtitle: 'We can give you guide pricing, but the final number depends on the exact glass and window layout.', bg: BG.install, canNext: () => true, render: renderGlassInfo, actionLabel: 'Continue' });
+        flow.push(leadStep());
+        return flow;
+      }
+
       if (state.enclosureType === 'solid') {
         flow.push({ id: 'solidRoofType', title: 'Which solid roof do you want?', subtitle: 'Choose the roof system that best fits the project and budget.', bg: BG.solid, canNext: () => !!state.solidRoofType, render: renderSolidRoofType, actionLabel: 'Continue' });
       }
@@ -394,7 +437,7 @@
     return {
       id: 'lead',
       title: 'Ready to proceed with an on-site quote?',
-      subtitle: 'If the estimate looks right, leave your name and phone number and we will reach out.',
+      subtitle: 'Leave your name and phone number and we will reach out about the next step.',
       bg: finalBg(),
       canNext: () => validateLead().ok && !state.leadSubmitting && !state.leadSubmitted,
       render: renderLeadForm,
@@ -470,7 +513,7 @@
     if (id === 'service') return 20;
     if (id === 'repairType' || id === 'type' || id === 'walls' || id === 'mesh' || id === 'roofType' || id === 'solidRoofType' || id === 'kickplate' || id === 'baseExisting' || id === 'newBaseType' || id === 'existingFooting' || id === 'footingPermitted' || id === 'beach' || id === 'rdCount' || id === 'stainless') return 25;
     if (id === 'measurements' || id === 'size' || id === 'openings') return 70;
-    if (id === 'hardwareList' || id === 'structuralContact' || id === 'limitContact' || id === 'permitInfo') return 15;
+    if (id === 'hardwareList' || id === 'structuralContact' || id === 'limitContact' || id === 'permitInfo' || id === 'glassInfo') return 15;
     if (id === 'done') return 20;
     if (id === 'lead') return 50;
     return 30;
@@ -493,6 +536,10 @@
 
       if (state.enclosureType === 'rolldown') {
         return ['service', 'type', 'beach', 'rdCount', 'openings', 'done', 'lead'];
+      }
+
+      if (state.enclosureType === 'glass') {
+        return ['service', 'type', 'glassInfo', 'lead'];
       }
 
       if (state.enclosureType === 'house') {
@@ -544,11 +591,13 @@
     }
     if (stepIndex < flow.length - 1) stepIndex += 1;
     syncNav();
+    revealEstimateAfterStepChange();
   }
 
   function back() {
     if (stepIndex > 0) stepIndex -= 1;
     syncNav();
+    scrollEstimatorIntoView();
   }
 
   function handleStepAction(step) {
@@ -605,7 +654,7 @@
   function renderServiceType() {
     bodyEl.innerHTML = `
       <div class='estq-grid'>
-        ${choiceCard({ key: 'install', tag: 'New project', title: 'New install or rebuild', desc: 'For new enclosures, rebuilds, house-roof tie-ins, or rolldown systems.', thumb: BG.install, bg: CARD_BG.blue })}
+        ${choiceCard({ key: 'install', tag: 'New project', title: 'New install or rebuild', desc: 'For new enclosures, rebuilds, glass enclosures, house-roof tie-ins, or rolldown systems.', thumb: BG.install, bg: CARD_BG.blue })}
         ${choiceCard({ key: 'repair', tag: 'Existing enclosure', title: 'Repair and replacement', desc: 'For existing enclosures that need screen work, hardware, or structural repair.', thumb: BG.repair, bg: CARD_BG.deep })}
       </div>
     `;
@@ -645,7 +694,7 @@
         <div class='estq-message'>
           <h3>Common hardware pricing</h3>
           <div class='estq-price-list'>
-            <div class='estq-price-row'><span>Service call</span><strong>$100</strong></div>
+            <div class='estq-price-row'><span>Service call</span><strong>$125</strong></div>
             <div class='estq-price-row'><span>Door kit</span><strong>$75</strong></div>
             <div class='estq-price-row'><span>Bug sweep</span><strong>$25</strong></div>
             <div class='estq-price-row'><span>Door kick plate replacement</span><strong>$80</strong></div>
@@ -868,11 +917,12 @@
         ${choiceCard({ key: 'solid', tag: 'Solid roof', title: 'Solid roof enclosure', desc: 'Covered enclosure with screen walls and a solid roof system.', thumb: BG.solid, bg: CARD_BG.blue })}
         ${choiceCard({ key: 'screen', tag: 'Screen roof', title: 'Screen roof enclosure', desc: 'Screen walls plus a screened roof for airflow and coverage.', thumb: BG.screen, bg: CARD_BG.teal })}
         ${choiceCard({ key: 'house', tag: 'Existing roof', title: 'Existing house roof', desc: 'Screen walls built under the existing house roof line.', thumb: BG.house, bg: CARD_BG.slate })}
+        ${choiceCard({ key: 'glass', tag: 'Manual quote', title: 'Glass enclosure', desc: 'Glass rooms and window-heavy enclosure builds that need a manual quote.', thumb: BG.install, bg: CARD_BG.soft })}
         ${choiceCard({ key: 'rolldown', tag: 'Openings only', title: 'Electronic rolldown system', desc: 'Motorized screens for openings and covered patios.', thumb: BG.rolldown, bg: CARD_BG.deep })}
       </div>
     `;
 
-    wireChoiceGroup('enclosureType', ['solid', 'screen', 'house', 'rolldown'], (value) => {
+    wireChoiceGroup('enclosureType', ['solid', 'screen', 'house', 'glass', 'rolldown'], (value) => {
       if (state.enclosureType !== value) {
         state.enclosureType = value;
         state.solidRoofType = null;
@@ -890,6 +940,28 @@
       }
       syncNav();
     });
+  }
+
+  function renderGlassInfo() {
+    bodyEl.innerHTML = `
+      <div class='estq-stack'>
+        <div class='estq-message'>
+          <h3>Glass enclosures need a manual quote</h3>
+          <p>Due to the site-specific requirements of the glass and window layout, we are not able to give a true online estimate for this type of project.</p>
+          <ul class='estq-list'>
+            <li>Guide pricing is roughly $1,200 per door.</li>
+            <li>Guide pricing is roughly $1,000 per window.</li>
+            <li>The frame for the future enclosure usually starts around $1,000.</li>
+            <li>Engineering and permitting often add about $500 depending on the size and the county.</li>
+          </ul>
+          <p>If you want the real number, request an on-site quote and we will walk the project with you.</p>
+          <div class='estq-actions'>
+            <button class='estq-btn estq-btn--primary' type='button' data-estq-open-lead>Request on-site quote</button>
+            ${contactLinkHtml()}
+          </div>
+        </div>
+      </div>
+    `;
   }
 
   function renderSolidRoofType() {
@@ -1223,11 +1295,14 @@
   function renderLeadForm() {
     const lines = buildReviewLines();
     const validation = validateLead();
+    const leadCopy = state.enclosureType === 'glass'
+      ? 'Leave your name and phone number and we will reach out about the glass enclosure layout and the next step.'
+      : 'If the estimate looks right, leave your name and phone number and we will reach out to schedule the next step.';
     bodyEl.innerHTML = `
       <div class='estq-stack'>
         <div class='estq-message'>
           <h3>Request an on-site quote</h3>
-          <p>If the estimate looks right, leave your name and phone number and we will reach out to schedule the next step.</p>
+          <p>${leadCopy}</p>
         </div>
 
         <div class='estq-fields'>
@@ -1321,8 +1396,8 @@
       const sentOk = response.ok && /alert-success/i.test(html);
       state.leadResponseHtml = html || `<div class='alert alert-danger'>Error processing request.</div>`;
       state.leadSubmitted = sentOk;
-      if (sentOk && typeof gtag_report_conversion === 'function') {
-        gtag_report_conversion();
+      if (sentOk && window.trackLeadConversion) {
+        window.trackLeadConversion({ source: 'estimate_tool', leadType: 'estimate_request', service: submissionServiceLabel() });
       }
     } catch (error) {
       state.leadSubmitted = false;
@@ -1786,6 +1861,7 @@
 
     if (state.serviceType === 'install') {
       if (state.enclosureType) items.push({ k: 'System', v: prettyType(state.enclosureType) });
+      if (state.enclosureType === 'glass') items.push({ k: 'Guide pricing', v: glassGuideLine() });
       if (state.enclosureType === 'solid' && state.solidRoofType) items.push({ k: 'Solid roof type', v: prettySolidRoofType(state.solidRoofType) });
       if (['solid', 'screen', 'house'].includes(state.enclosureType)) {
         if (state.screenWalls) items.push({ k: 'Screen walls', v: `${state.screenWalls}` });
@@ -1913,6 +1989,17 @@
         amount: 'Choose a system',
         note: 'Pick the system to start the right pricing path.',
         fine: 'Online estimate only. Final price may change after field measurements, permit requirements, and site conditions.'
+      };
+    }
+
+    if (state.enclosureType === 'glass') {
+      return {
+        label: 'Next step',
+        badge: 'Manual quote',
+        badgeClass: 'estq-badge estq-badge--manual',
+        amount: 'Guide pricing only',
+        note: 'Glass enclosures are site-specific. Expect roughly $1,200 per door, $1,000 per window, and about $1,000 for the enclosure frame.',
+        fine: 'Engineering and permitting commonly add about $500 depending on the size and county. Request an on-site quote for the real number.'
       };
     }
 
@@ -2214,8 +2301,13 @@
     if (value === 'solid') return 'Solid roof enclosure';
     if (value === 'screen') return 'Screen roof enclosure';
     if (value === 'house') return 'Existing house roof';
+    if (value === 'glass') return 'Glass enclosure';
     if (value === 'rolldown') return 'Electronic rolldown system';
     return '';
+  }
+
+  function glassGuideLine() {
+    return 'About $1,200 per door, $1,000 per window, about $1,000 for the frame, plus about $500 for engineering and permitting depending on size and county.';
   }
 
   function prettySolidRoofType(value) {

@@ -1,0 +1,310 @@
+SEO improvement notes
+Reviewed: 2026-03-19
+Workspace: C:\Users\defst\Desktop\screenspecbetterfinal
+
+Overall read
+- The refreshed core pages are mostly in decent structural shape: homepage, services, core service pages, location pages, project pages, and contact all have usable titles, canonicals, one H1, and JSON-LD.
+- The biggest SEO drag is the old indexable blog/article group plus the estimate/privacy support pages.
+- The site is currently telling Google to crawl weak pages in the sitemap, which is avoidable.
+
+Highest impact
+1. Rebuild or noindex the legacy blog/article pages before leaving them indexable.
+Why this matters:
+- These pages are the weakest SEO assets on the site and are still crawlable.
+- Several are missing canonical tags, JSON-LD, and even an H1.
+- They still use the old template and weaker metadata, so they dilute site quality compared with the newer pages.
+Affected pages:
+- blog.html
+- choosing-screen-type.html
+- blog-screen-enclosure-cables.html
+- blog-screen-enclosure-for-pets.html
+- lanai-construction.html
+Notes:
+- blog.html: title is just the brand name, no canonical, no JSON-LD, no H1.
+- choosing-screen-type.html: wrong title/description pair reused from cable-maintenance content, no canonical, no JSON-LD, no H1.
+- blog-screen-enclosure-cables.html: no canonical, no JSON-LD, no H1.
+- blog-screen-enclosure-for-pets.html: no canonical, no JSON-LD, no H1.
+- lanai-construction.html: generic brand-only title, duplicate-style description, no canonical, no JSON-LD, no H1.
+Recommendation:
+- Either fully rebuild these pages into real article pages with unique metadata, H1s, schema, and current copy, or add noindex and remove them from the sitemap until rebuilt.
+
+2. Remove low-quality/stale pages from sitemap.xml until they are fixed.
+Why this matters:
+- Sitemap inclusion is a direct signal that these are pages you want crawled and indexed.
+- Right now the sitemap includes pages that are structurally weaker than the rest of the site.
+Affected sitemap entries:
+- blog.html
+- choosing-screen-type.html
+- lanai-construction.html
+- blog-screen-enclosure-cables.html
+- blog-screen-enclosure-for-pets.html
+- estimate.html
+- privacy.html
+Recommendation:
+- Keep the sitemap focused on the best pages first: homepage, services, service pages, location pages, project pages, contact, portfolio.
+- Only keep weak support/blog pages in the sitemap if they are intentionally optimized.
+
+3. Decide whether estimate.html is an SEO landing page or a utility page.
+Why this matters:
+- estimate.html is currently indexed and in the sitemap, but it is structurally thin.
+- It has no canonical, no JSON-LD, a generic title, and very little crawlable copy.
+Current state:
+- Title: brand-only.
+- H1: Instant Quote.
+- Word count: about 177 words.
+Recommendation:
+- Pick one path:
+  - Optimize it as a true estimate/pricing page with a focused title, canonical, schema, and stronger explanatory content.
+  - Or add noindex and treat it as a conversion utility instead of an SEO page.
+
+High impact
+4. Fix duplicate and generic metadata on the weak page set.
+Why this matters:
+- Duplicate titles and meta descriptions create avoidable ambiguity.
+- Generic brand-only titles waste query relevance.
+Duplicates found:
+- Title duplicate: blog-screen-enclosure-cables.html and choosing-screen-type.html
+- Title duplicate: blog.html, estimate.html, lanai-construction.html
+- Description duplicate: blog-screen-enclosure-cables.html and choosing-screen-type.html
+- Description duplicate: blog.html and lanai-construction.html
+Recommendation:
+- Every indexable page should have a unique title and unique meta description that match the actual topic.
+
+5. Bring keyword alignment closer between title tags and H1s on the main service pages.
+Why this matters:
+- Titles are doing more keyword work than some H1s.
+- The current H1s read naturally, but several are more brand/editorial than search-aligned.
+Pages to revisit:
+- new-screen-enclosures.html
+- composite-roof-enclosures.html
+- maestroshield-rolldown-screens.html
+- screen-enclosure-repair.html
+- pool-enclosure-rescreening.html
+- screen-enclosure-rebuilds.html
+Examples:
+- new-screen-enclosures.html title targets "New Screen Enclosures", but H1 is "Build the enclosure around the way you actually want to use the space."
+- composite-roof-enclosures.html title targets "Composite & Pan Roof Enclosures", but H1 is "Build a covered enclosure with real shade and weather protection."
+Recommendation:
+- Keep the human tone, but move the primary query term closer to the H1 on the main money pages.
+
+6. Add canonical + JSON-LD coverage to all remaining indexable pages, not just the refreshed pages.
+Missing canonical and JSON-LD:
+- blog.html
+- choosing-screen-type.html
+- blog-screen-enclosure-cables.html
+- blog-screen-enclosure-for-pets.html
+- lanai-construction.html
+- estimate.html
+- privacy.html
+Recommendation:
+- If a page stays indexable, it should have at minimum: unique title, unique description, canonical, one H1, and an appropriate schema block.
+
+Medium impact
+7. Tighten homepage metadata a little more.
+Current state:
+- Homepage is structurally strong and should stay indexed.
+- Title and schema are present.
+Remaining SEO note:
+- The homepage description is long enough that it may truncate.
+- The H1 is strong, but it still skews broad rather than reinforcing one or two highest-value intents.
+Recommendation:
+- Minor tuning only. This is not a homepage crisis.
+
+8. Rework the blog hub into a real article archive if it remains indexable.
+Current state:
+- blog.html has no H1, no canonical, no schema, and a generic title.
+- It looks more like a legacy template page than a true topical hub.
+Recommendation:
+- If it stays public, give it a real SEO role: an H1, a clear intro, better title/meta, and links into the specific articles and service pages.
+
+9. Improve project pages as topical support pages, not just proof pages.
+Current state:
+- Project pages are structurally solid.
+- Their titles are good.
+SEO opportunity:
+- Add stronger service + location context in visible copy and internal links.
+Pages:
+- large-panoramic-pool-enclosure-project.html
+- composite-roof-riser-wall-project.html
+- maestroshield-rolldown-project.html
+Recommendation:
+- These pages are already good enough to index; this is an enhancement, not a rescue job.
+
+10. Review privacy.html as an indexable page.
+Current state:
+- No canonical.
+- No JSON-LD.
+- Two H1s.
+- No meta description.
+- Long generic legal text, including visible encoding artifacts.
+Recommendation:
+- Lowest-friction path is usually to remove it from the sitemap and add noindex, unless there is a strong reason to have it indexed.
+
+Low impact
+11. Clean up robots.txt pattern rules if you want cleaner technical hygiene.
+Notes:
+- The robots file is generally fine.
+- Pattern-style lines like /estimate-*.png$ and /branding*.jpg$ are not the strongest portability choice across crawlers.
+Recommendation:
+- Low priority. Not hurting more than the indexable weak pages are.
+
+12. Normalize title pattern consistency sitewide.
+Current state:
+- Refreshed pages mostly follow a clean pattern.
+- Legacy pages do not.
+Recommendation:
+- Use one pattern for every indexable page, for example:
+  - Primary topic | Screen Enclosure Specialists
+
+13. Review old article copy quality for factual/quality updates.
+Notes:
+- Some old pages still read like older template marketing copy rather than current contractor guidance.
+- Even after metadata fixes, these pages would still need content-quality updates to be worth indexing.
+
+Pages in strong shape structurally
+These pages are not perfect, but they are not the current SEO problem.
+- index.html
+- services.html
+- contact.html
+- screen-enclosure-repair.html
+- pool-enclosure-rescreening.html
+- screen-enclosure-rebuilds.html
+- new-screen-enclosures.html
+- composite-roof-enclosures.html
+- maestroshield-rolldown-screens.html
+- jacksonville-screen-enclosures.html
+- st-augustine-screen-enclosures.html
+- st-johns-county-screen-enclosures.html
+- ponte-vedra-screen-enclosures.html
+- jacksonville-pool-enclosure-rescreening.html
+- st-augustine-pool-enclosure-rescreening.html
+- portfolio.html
+- large-panoramic-pool-enclosure-project.html
+- composite-roof-riser-wall-project.html
+- maestroshield-rolldown-project.html
+
+Page-by-page notes
+index.html
+- Keep indexed.
+- Strongest page on the site structurally.
+- Only minor SEO tuning left: slightly tighter meta description and stronger supporting relevance around priority services.
+
+services.html
+- Keep indexed.
+- Good hub page structure, canonical, JSON-LD, one H1.
+- Main SEO work now is content refinement and stronger support from article/project pages.
+
+contact.html
+- Keep indexed.
+- Structurally fine.
+- Not a major SEO opportunity compared with the service/location pages.
+
+estimate.html
+- Needs a decision.
+- Currently too thin and generic to be a strong organic page.
+- Either optimize it properly or noindex it.
+
+portfolio.html
+- Keep indexed.
+- Strong support page with a decent amount of content and internal links.
+- Opportunity: add more service/location cues in captions and intros.
+
+screen-enclosure-repair.html
+- Structurally good.
+- Consider making the H1 slightly more query-aligned.
+
+pool-enclosure-rescreening.html
+- Structurally good.
+- Consider making the H1 slightly more query-aligned.
+
+screen-enclosure-rebuilds.html
+- Structurally good.
+- Consider making the H1 slightly more query-aligned.
+
+new-screen-enclosures.html
+- Structurally good.
+- H1 is more editorial than search-targeted.
+
+composite-roof-enclosures.html
+- Structurally good.
+- H1 could echo the primary query more directly.
+
+maestroshield-rolldown-screens.html
+- Structurally good.
+- H1 could echo the product/service phrase more directly.
+
+jacksonville-screen-enclosures.html
+- Good structure.
+- Reasonable local landing page.
+
+st-augustine-screen-enclosures.html
+- Good structure.
+- Reasonable local landing page.
+
+st-johns-county-screen-enclosures.html
+- Good structure.
+- Harder keyword target naturally, but technically sound.
+
+ponte-vedra-screen-enclosures.html
+- Good structure.
+- Reasonable local landing page.
+
+jacksonville-pool-enclosure-rescreening.html
+- Good structure.
+- Useful local/service combination page.
+
+st-augustine-pool-enclosure-rescreening.html
+- Good structure.
+- Useful local/service combination page.
+
+large-panoramic-pool-enclosure-project.html
+- Keep indexed.
+- Stronger project proof than most contractor sites have.
+- Could support nearby service/location pages even more.
+
+composite-roof-riser-wall-project.html
+- Keep indexed.
+- Good support page.
+- Opportunity is mainly stronger service-context wording.
+
+maestroshield-rolldown-project.html
+- Keep indexed.
+- Good support page.
+- Opportunity is mainly stronger product/service-context wording.
+
+blog.html
+- Weak indexable page right now.
+- Missing canonical, JSON-LD, and H1.
+- Title is too generic.
+- Should be rebuilt or noindexed.
+
+choosing-screen-type.html
+- One of the weakest SEO pages on the site.
+- Wrong duplicated title/description from the cable page.
+- Missing canonical, JSON-LD, and H1.
+- Should be rebuilt or noindexed.
+
+blog-screen-enclosure-cables.html
+- Missing canonical, JSON-LD, and H1.
+- Metadata is at least topic-matched, but structure is still weak.
+- Rebuild or noindex.
+
+blog-screen-enclosure-for-pets.html
+- Better topic fit than some of the other blog pages, but still missing canonical, JSON-LD, and H1.
+- Rebuild or noindex.
+
+lanai-construction.html
+- Another weak legacy page.
+- Brand-only title, generic duplicate-style description, missing canonical, JSON-LD, and H1.
+- Rebuild or noindex.
+
+privacy.html
+- Not a search target.
+- Missing canonical and schema, no meta description, two H1s, and should probably not be in the sitemap.
+
+Technical snapshot used for these notes
+- Missing canonical: blog-screen-enclosure-cables.html, blog-screen-enclosure-for-pets.html, blog.html, choosing-screen-type.html, estimate.html, lanai-construction.html, privacy.html
+- Missing JSON-LD: blog-screen-enclosure-cables.html, blog-screen-enclosure-for-pets.html, blog.html, choosing-screen-type.html, estimate.html, lanai-construction.html, privacy.html
+- Missing H1: blog-screen-enclosure-cables.html, blog-screen-enclosure-for-pets.html, blog.html, choosing-screen-type.html, lanai-construction.html
+- Duplicate titles found on legacy pages.
+- Duplicate descriptions found on legacy pages.

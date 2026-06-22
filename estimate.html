@@ -5,10 +5,13 @@
 	<title>Screen Enclosure Specialists</title>
 	<meta name="description" content="Expert screen enclosure construction and rescreening services. High-quality materials, guaranteed satisfaction, and professional craftsmanship for your pool, patio, and lanai.">
 
-	<meta name="author" content="Artiom">
+	<meta name="author" content="Screen Enclosure Specialists">
 	<link rel="shortcut icon" href="assets/img/logo/logo-transparent-png_16x16.png" type="image/x-icon">
 	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:site_name" content="Screen Enclosure Specialists">
+  <meta name="application-name" content="Screen Enclosure Specialists">
+  <meta name="apple-mobile-web-app-title" content="Screen Enclosure Specialists">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
 	<link rel="stylesheet" href="assets/css/flaticon-2.css">
@@ -400,7 +403,7 @@ input:focus{
       to{ opacity:1; transform: translateY(0); }
     }
   </style>
-  <link rel='stylesheet' href='assets/css/estimate-refresh.css?v=20260311-25'>
+  <link rel='stylesheet' href='assets/css/estimate-refresh.css?v=20260319-1'>
 </head>
 <a href="tel:+19047539267" class="fab-call" aria-label="Call us">
   								<div class="icon">
@@ -467,7 +470,7 @@ input:focus{
           <div class="topRow">
             <div class="titleBlock">
               <h1 id="stepTitle">Instant Quote</h1>
-              <p id="stepSubtitle">Answer a few questions. You’ll see a step-by-step quote summary on the right.</p>
+              <p id="stepSubtitle">Answer a few questions. YouвЂ™ll see a step-by-step quote summary on the right.</p>
               <div class="progress" aria-label="Progress">
                 <div id="bar" class="bar"></div>
               </div>
@@ -495,9 +498,9 @@ input:focus{
 
           <div class="quoteBox">
             <div class="k">Estimated range (stub)</div>
-            <div id="quoteAmt" class="amt">$—</div>
+            <div id="quoteAmt" class="amt">$вЂ”</div>
             <div class="note">
-              Pricing logic isn’t included here. Wire your real calculation into <code>computeQuote()</code>.
+              Pricing logic isnвЂ™t included here. Wire your real calculation into <code>computeQuote()</code>.
             </div>
           </div>
 
@@ -692,7 +695,7 @@ input:focus{
       flow.push({
         id: "structuralContact",
         title: "Structural repair",
-        subtitle: "We’ll need to see it to estimate it accurately.",
+        subtitle: "WeвЂ™ll need to see it to estimate it accurately.",
         bg: BG.base,
         canNext: () => true,
         render: renderStructuralContact
@@ -707,7 +710,7 @@ input:focus{
       flow.push({
         id: "mesh",
         title: "What screen type would you like?",
-        subtitle: "We’ll keep it simple for this online estimate.",
+        subtitle: "WeвЂ™ll keep it simple for this online estimate.",
         bg: BG.base,
         canNext: () => !!state.mesh,
         render: renderMesh
@@ -725,7 +728,7 @@ input:focus{
       flow.push({
         id: "wallCount",
         title: "How many walls does your enclosure have?",
-        subtitle: "Choose up to 4. If it’s more than 4, we’ll send you to contact us.",
+        subtitle: "Choose up to 4. If itвЂ™s more than 4, weвЂ™ll send you to contact us.",
         bg: BG.base,
         canNext: () => state.wallCount !== null,
         render: renderWallCount
@@ -735,7 +738,7 @@ input:focus{
         flow.push({
           id: "limitContact",
           title: "We need a quick look to quote this",
-          subtitle: "Due to limitations of this online estimator, we can’t calculate enclosures with more than 4 walls.",
+          subtitle: "Due to limitations of this online estimator, we canвЂ™t calculate enclosures with more than 4 walls.",
           bg: BG.base,
           canNext: () => true,
           render: renderLimitContact
@@ -810,7 +813,7 @@ input:focus{
       flow.push({
         id: "beach",
         title: "Rolldown system: location check",
-        subtitle: "We need to know if you’re near the beach or in areas prone to extreme wind conditions.",
+        subtitle: "We need to know if youвЂ™re near the beach or in areas prone to extreme wind conditions.",
         bg: BG.rolldown,
         canNext: () => (state.nearBeach === false) || (state.nearBeach === true && state.beachOverride === true),
         render: renderBeach
@@ -1079,13 +1082,13 @@ function renderHardwareList(){
       <div class="card" style="margin-top:0;">
         <div style="font-weight:800; font-size:16px;">Price list</div>
         <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.55;">
-          <div><strong>Service call fee — $100</strong> <span style="color:var(--muted2);">(charged once per visit; waived when the selected repair total exceeds $350)</span></div>
+          <div><strong>Service call fee вЂ” $125</strong> <span style="color:var(--muted2);">(charged once per visit; waived when the selected repair total exceeds $350)</span></div>
           <hr style="border:0; border-top:1px solid var(--border); margin:10px 0;">
-          <div>Door kit — <strong>$75</strong></div>
-          <div>Bug sweep — <strong>$25</strong></div>
-          <div>Door kick plate replacement — <strong>$80</strong></div>
-          <div>Cable replacement — <strong>$100</strong></div>
-          <div>Cable adjustment — <strong>$15</strong></div>
+          <div>Door kit вЂ” <strong>$75</strong></div>
+          <div>Bug sweep вЂ” <strong>$25</strong></div>
+          <div>Door kick plate replacement вЂ” <strong>$80</strong></div>
+          <div>Cable replacement вЂ” <strong>$100</strong></div>
+          <div>Cable adjustment вЂ” <strong>$15</strong></div>
         </div>
       </div>
       <div class="card" style="margin-top:0;">
@@ -1107,8 +1110,8 @@ function renderStructuralContact(){
       <div class="card" style="margin-top:0;">
         <div style="font-weight:800; font-size:16px;">Structural repairs require a site review</div>
         <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.55;">
-          Structural repairs vary widely in scope and complexity, so we can’t provide a meaningful estimate online without seeing the enclosure.
-          Please reach out and we’ll take a look and give you a clear quote.
+          Structural repairs vary widely in scope and complexity, so we canвЂ™t provide a meaningful estimate online without seeing the enclosure.
+          Please reach out and weвЂ™ll take a look and give you a clear quote.
         </div>
         <div style="margin-top:12px;">
           <a class="primary" href="#clinox-booking-form" style="display:inline-block; text-decoration:none; padding:11px 14px; border-radius:12px;">Contact us</a>
@@ -1122,10 +1125,10 @@ function renderLimitContact(){
   stepBodyEl.innerHTML = `
     <div class="fields">
       <div class="card" style="margin-top:0;">
-        <div style="font-weight:800; font-size:16px;">We can’t calculate this layout online</div>
+        <div style="font-weight:800; font-size:16px;">We canвЂ™t calculate this layout online</div>
         <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.55;">
-          Due to limitations of this estimator, we can’t calculate a quote for enclosures with more than 4 walls.
-          Please reach out and we’ll get you a proper estimate.
+          Due to limitations of this estimator, we canвЂ™t calculate a quote for enclosures with more than 4 walls.
+          Please reach out and weвЂ™ll get you a proper estimate.
         </div>
         <div style="margin-top:12px;">
           <a class="primary" href="#clinox-booking-form" style="display:inline-block; text-decoration:none; padding:11px 14px; border-radius:12px;">Contact us</a>
@@ -1182,7 +1185,7 @@ function renderWallCount(){
       ${choiceCard({ key:"2", label:"2", desc:"Two walls", bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)" })}
       ${choiceCard({ key:"3", label:"3", desc:"Three walls", bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)" })}
       ${choiceCard({ key:"4", label:"4", desc:"Four walls", bg:"radial-gradient(900px 260px at 20% 60%, rgba(37,99,235,.14), transparent)" })}
-      ${choiceCard({ key:"more", label:"More than 4", desc:"We’ll need to quote this manually.", bg:"radial-gradient(900px 260px at 20% 60%, rgba(245,158,11,.14), transparent)" })}
+      ${choiceCard({ key:"more", label:"More than 4", desc:"WeвЂ™ll need to quote this manually.", bg:"radial-gradient(900px 260px at 20% 60%, rgba(245,158,11,.14), transparent)" })}
     </div>
   `;
 
@@ -1326,7 +1329,7 @@ function renderStainless(){
 
 function validateScreenReplaceMeasurements(){
   const n = state.wallCount;
-  if (!Number.isInteger(n) || n < 1 || n > 4) return {ok:false, msg:"Select wall count (1–4)."};
+  if (!Number.isInteger(n) || n < 1 || n > 4) return {ok:false, msg:"Select wall count (1вЂ“4)."};
   const h = state.wallHeight;
   if (!(typeof h === "number") || !isFinite(h) || h <= 0) return {ok:false, msg:"Wall height"};
 
@@ -1559,7 +1562,7 @@ function resetInstallBranch(){
           <div class="card" style="margin-top:0;">
             <div style="font-weight:800; font-size:16px;">Your inputs</div>
             <div style="margin-top:10px; color:var(--muted); font-size:13px; line-height:1.45;">
-              ${lines.map(x => `<div>• ${escapeHtml(x)}</div>`).join("") || "<div>—</div>"}
+              ${lines.map(x => `<div>вЂў ${escapeHtml(x)}</div>`).join("") || "<div>вЂ”</div>"}
             </div>
           </div>
 
@@ -1690,21 +1693,21 @@ function choiceCard({key,label,desc,thumb,bg}){
     // ----- Summary + quote stubs -----
     function renderSummary(){
       const items = [
-        {k:"Enclosure Type", v: prettyType(state.enclosureType) || "—"},
+        {k:"Enclosure Type", v: prettyType(state.enclosureType) || "вЂ”"},
       ];
 
       if (["solid","screen","house"].includes(state.enclosureType)){
-        items.push({k:"Screen Walls", v: state.screenWalls ? String(state.screenWalls) : "—"});
+        items.push({k:"Screen Walls", v: state.screenWalls ? String(state.screenWalls) : "вЂ”"});
         const dimLine = dimsLineForWalls();
-        items.push({k:"Approx. Size", v: dimLine || "—"});
+        items.push({k:"Approx. Size", v: dimLine || "вЂ”"});
       }
 
       if (state.enclosureType === "rolldown"){
-        items.push({k:"Near beach / extreme wind", v: state.nearBeach === null ? "—" : (state.nearBeach ? "Yes" : "No")});
+        items.push({k:"Near beach / extreme wind", v: state.nearBeach === null ? "вЂ”" : (state.nearBeach ? "Yes" : "No")});
         if (state.nearBeach) items.push({k:"Override to quote", v: state.beachOverride ? "Yes" : "No"});
-        items.push({k:"Rolldown count", v: state.rolldownCount ? String(state.rolldownCount) : "—"});
+        items.push({k:"Rolldown count", v: state.rolldownCount ? String(state.rolldownCount) : "вЂ”"});
         items.push({k:"Openings same size", v: state.openingsSame ? "Yes" : "No"});
-        items.push({k:"Openings", v: openingsLine() || "—"});
+        items.push({k:"Openings", v: openingsLine() || "вЂ”"});
       }
 
       summaryKvEl.innerHTML = items.map(it => `
@@ -1716,21 +1719,21 @@ function choiceCard({key,label,desc,thumb,bg}){
     }
 
     function computeQuote(){
-      // Stub: Replace with real pricing. Return a string like "$12,500 – $15,200".
+      // Stub: Replace with real pricing. Return a string like "$12,500 вЂ“ $15,200".
       // Example placeholder behavior:
-      if (!state.enclosureType) return "$—";
+      if (!state.enclosureType) return "$вЂ”";
 
       if (state.enclosureType === "rolldown"){
-        if (!state.rolldownCount) return "$—";
+        if (!state.rolldownCount) return "$вЂ”";
         // toy math, just to show it changes:
         const base = 1800 * state.rolldownCount;
         return moneyRange(base * 0.9, base * 1.15);
       }
 
       if (["solid","screen","house"].includes(state.enclosureType)){
-        if (!state.screenWalls) return "$—";
+        if (!state.screenWalls) return "$вЂ”";
         const val = validateDimsForWalls();
-        if (!val.ok) return "$—";
+        if (!val.ok) return "$вЂ”";
 
         const approxArea = roughAreaForWalls(); // toy estimate
         const rate = state.enclosureType === "solid" ? 95 : (state.enclosureType === "screen" ? 65 : 75);
@@ -1738,12 +1741,12 @@ function choiceCard({key,label,desc,thumb,bg}){
         return moneyRange(base * 0.9, base * 1.15);
       }
 
-      return "$—";
+      return "$вЂ”";
     }
 
     function moneyRange(a,b){
       const fmt = (x) => "$" + Math.round(x).toLocaleString();
-      return `${fmt(a)} – ${fmt(b)}`;
+      return `${fmt(a)} вЂ“ ${fmt(b)}`;
     }
 
     function roughAreaForWalls(){
@@ -1761,10 +1764,10 @@ function choiceCard({key,label,desc,thumb,bg}){
       const n = state.screenWalls;
       const d = state.dims;
       if (!n) return "";
-      if (n === 1) return `Width ${d.width || "—"} ft, Projection ${d.projection || "—"} ft`;
-      if (n === 2) return `Front ${d.front || "—"} ft, Side ${d.side1 || "—"} ft`;
-      if (n === 3) return `Front ${d.front || "—"} ft, Side1 ${d.side1 || "—"} ft, Side2 ${d.side2 || "—"} ft`;
-      if (n === 4) return `Front ${d.front || "—"} ft, Side1 ${d.side1 || "—"} ft, Side2 ${d.side2 || "—"} ft, Back ${d.back || "—"} ft`;
+      if (n === 1) return `Width ${d.width || "вЂ”"} ft, Projection ${d.projection || "вЂ”"} ft`;
+      if (n === 2) return `Front ${d.front || "вЂ”"} ft, Side ${d.side1 || "вЂ”"} ft`;
+      if (n === 3) return `Front ${d.front || "вЂ”"} ft, Side1 ${d.side1 || "вЂ”"} ft, Side2 ${d.side2 || "вЂ”"} ft`;
+      if (n === 4) return `Front ${d.front || "вЂ”"} ft, Side1 ${d.side1 || "вЂ”"} ft, Side2 ${d.side2 || "вЂ”"} ft, Back ${d.back || "вЂ”"} ft`;
       return "";
     }
 
@@ -1774,13 +1777,13 @@ function choiceCard({key,label,desc,thumb,bg}){
       if (state.openingsSame){
         const h = d.all_h, w = d.all_w;
         if (!h || !w) return "";
-        return `${state.rolldownCount} × (${h}" H × ${w}" W)`;
+        return `${state.rolldownCount} Г— (${h}" H Г— ${w}" W)`;
       } else {
         const parts = [];
         for (let i=1;i<=state.rolldownCount;i++){
           const h = d[`o${i}_h`], w = d[`o${i}_w`];
           if (!h || !w) return "";
-          parts.push(`#${i} ${h}"×${w}"`);
+          parts.push(`#${i} ${h}"Г—${w}"`);
         }
         return parts.join(", ");
       }
@@ -1798,7 +1801,7 @@ function choiceCard({key,label,desc,thumb,bg}){
         if (state.nearBeach !== null) lines.push(`Near beach/extreme wind: ${state.nearBeach ? "Yes" : "No"}`);
         if (state.nearBeach) lines.push(`Override to quote: ${state.beachOverride ? "Yes" : "No"}`);
         if (state.rolldownCount) lines.push(`Rolldown count: ${state.rolldownCount}`);
-        if (state.rolldownCount) lines.push(`Openings: ${openingsLine() || "—"}`);
+        if (state.rolldownCount) lines.push(`Openings: ${openingsLine() || "вЂ”"}`);
       }
       return lines;
     }
@@ -1853,6 +1856,7 @@ function choiceCard({key,label,desc,thumb,bg}){
 <script>
 (() => {
   const lb = document.getElementById('lightbox');
+  if (!lb) return;
   const lbImg = lb.querySelector('.lightbox__img');
   const closeBtn = lb.querySelector('.lightbox__close');
 
@@ -1887,16 +1891,10 @@ function choiceCard({key,label,desc,thumb,bg}){
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 })();
 </script>
-<script src='assets/js/estimate-refresh.js?v=20260310-23'></script>
+<script src='assets/js/site-tracking.js?v=20260315-5'></script>
+<script src='assets/js/estimate-refresh.js?v=20260622-1'></script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 

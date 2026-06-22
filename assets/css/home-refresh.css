@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'BrandZuume';
-  src: url('../fonts/brand/zuume-bold.ttf') format('truetype');
+  src: url('../fonts/brand/zuume-bold.ttf?v=20260319-1') format('truetype');
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -73,7 +73,7 @@ a {
 }
 
 .home-shell {
-  width: min(1280px, calc(100% - 32px));
+  width: min(1400px, calc(100% - 24px));
   margin: 0 auto;
 }
 
@@ -488,7 +488,7 @@ a {
 }
 
 .home-strip__grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .home-services-grid {
@@ -623,14 +623,15 @@ a {
 
 .home-hero-estimate-card {
   padding: 22px;
-  background: linear-gradient(145deg, rgba(14, 30, 49, 0.98), rgba(10, 8, 13, 0.95));
+  background: linear-gradient(145deg, rgba(18, 40, 63, 0.94), rgba(11, 25, 41, 0.92));
+  box-shadow: 0 24px 48px rgba(10, 8, 13, 0.16);
 }
 
 .home-hero-estimate-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(57, 173, 255, 0.18), transparent 38%);
+  background: radial-gradient(circle at top right, rgba(57, 173, 255, 0.14), transparent 42%);
   pointer-events: none;
 }
 
@@ -1253,3 +1254,113 @@ a {
   text-decoration: underline;
 }
 
+
+
+
+@media (min-width: 1181px) {
+  .home-hero__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(430px, 0.94fr);
+    gap: 20px;
+  }
+
+  .home-brand__eyebrow,
+  .home-section__eyebrow,
+  .home-proof-card__label,
+  .home-strip__kicker,
+  .home-service-card__tag,
+  .home-project-card__tag,
+  .home-process-card__eyebrow,
+  .home-footer__label,
+  .home-hero-card__tag,
+  .home-hero-estimate-card__eyebrow {
+    font-size: 12px;
+  }
+
+  .home-brand__title {
+    font-size: clamp(1.18rem, 1.9vw, 1.65rem);
+  }
+
+  .home-nav a {
+    font-size: 17px;
+  }
+
+  .home-btn {
+    min-height: 62px;
+    padding: 0 26px;
+    font-size: 18px;
+  }
+
+  .home-phone-pill {
+    min-height: 62px;
+    padding: 0 20px;
+  }
+
+  .home-phone-pill small {
+    font-size: 13px;
+  }
+
+  .home-phone-pill strong {
+    font-size: 19px;
+  }
+
+  .home-chip {
+    font-size: 16px;
+  }
+
+  .home-section__text,
+  .home-hero__text,
+  .home-proof-card p,
+  .home-strip__item p,
+  .home-service-card p,
+  .home-project-card p,
+  .home-review-card p,
+  .home-contact__detail span,
+  .home-contact__aside-cta p,
+  .home-process-list p,
+  .home-footer__brand-block p,
+  .home-form-card__head p {
+    font-size: 19px;
+  }
+
+  .home-hero__title {
+    max-width: 14.2ch;
+    font-size: clamp(3.25rem, 8.6vw, 6.2rem);
+  }
+
+  .home-hero__action-note {
+    font-size: 18px;
+  }
+
+  .home-proof-card strong,
+  .home-strip__item strong,
+  .home-service-card h3,
+  .home-project-card h3,
+  .home-form-card h3,
+  .home-section-cta h3 {
+    font-size: 1.4rem;
+  }
+
+  .home-hero-card__overlay strong {
+    font-size: 1.28rem;
+  }
+
+  .home-hero-card__overlay p {
+    font-size: 17px;
+  }
+
+  .home-hero-estimate-card h2 {
+    font-size: clamp(1.95rem, 3.2vw, 2.6rem);
+  }
+
+  .home-hero-estimate-card p {
+    font-size: 18px;
+  }
+
+  .home-hero-estimate-card__list li {
+    font-size: 17px;
+  }
+
+  .home-header .home-btn {
+    font-size: 18px;
+  }
+}

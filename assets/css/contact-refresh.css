@@ -261,3 +261,25 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (min-width: 1181px) {
+  .contact-hero__note,
+  .contact-quick__card p,
+  .contact-support-card--light p,
+  .contact-support-card__overlay p,
+  .contact-checklist li {
+    font-size: 19px;
+    line-height: 1.72;
+  }
+
+  .contact-form__meta span {
+    font-size: 14px;
+  }
+
+  .contact-quick__card strong,
+  .contact-quick__card strong a,
+  .contact-support-card--light strong,
+  .contact-support-card__overlay strong {
+    font-size: 1.4rem;
+  }
+}

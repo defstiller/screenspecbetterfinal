@@ -39,26 +39,16 @@
 
   trackedCallLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.gtag) {
-        gtag('event', 'click', {
-          event_category: 'phone',
-          event_label: 'homepage_call'
-        });
-      }
-
-      if (window.trackLeadConversion) {
-        window.trackLeadConversion();
+      if (window.trackPhoneClick) {
+        window.trackPhoneClick({ label: 'homepage_call' });
       }
     });
   });
 
   trackedEstimateLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.gtag) {
-        gtag('event', 'estimate_start', {
-          event_category: 'engagement',
-          event_label: 'homepage_estimate'
-        });
+      if (window.trackEstimateStart) {
+        window.trackEstimateStart({ label: 'homepage_estimate' });
       }
     });
   });
@@ -176,7 +166,7 @@
       if (/alert-success|Email Sent Successfully/i.test(html)) {
         form.reset();
         if (window.trackLeadConversion) {
-          window.trackLeadConversion();
+          window.trackLeadConversion({ source: 'homepage_form', leadType: 'quote_request' });
         }
       }
     } catch (error) {
