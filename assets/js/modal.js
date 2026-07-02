@@ -1,6 +1,17 @@
 $(document).ready(function() {
     $('.formSubmission').submit(function(e) {
         e.preventDefault();
+        var spamGuard = window.formSpamGuard;
+
+        if (spamGuard && spamGuard.formHasLink(this)) {
+            $('#message').html(spamGuard.quietSuccessHtml());
+            $('#responseModal').modal('show');
+            if (this.reset) {
+                this.reset();
+            }
+            return;
+        }
+
         var actionUrl = $(this).attr('action');
         var formData = $(this).serialize();
 

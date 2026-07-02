@@ -139,6 +139,15 @@
     const submitButton = form.querySelector('button[type="submit"]');
     const formData = new FormData(form);
     const payload = new URLSearchParams();
+    const spamGuard = window.formSpamGuard;
+
+    if (spamGuard && spamGuard.formDataHasLink(formData)) {
+      formStatus.innerHTML = spamGuard.quietSuccessHtml();
+      formStatus.classList.add('is-visible');
+      formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      form.reset();
+      return;
+    }
 
     formData.forEach((value, key) => {
       payload.append(key, value instanceof File ? value.name : String(value));

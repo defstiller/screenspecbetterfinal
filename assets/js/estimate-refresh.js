@@ -1371,6 +1371,14 @@
       return;
     }
 
+    if (window.formSpamGuard && window.formSpamGuard.valuesHaveLink([state.leadName, state.leadPhone])) {
+      state.leadSubmitting = false;
+      state.leadResponseHtml = window.formSpamGuard.quietSuccessHtml();
+      state.leadSubmitted = true;
+      syncNav();
+      return;
+    }
+
     state.leadSubmitting = true;
     state.leadResponseHtml = '';
     state.leadSubmitted = false;
